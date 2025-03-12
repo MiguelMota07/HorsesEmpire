@@ -1,4 +1,6 @@
-﻿namespace HorsesEmpire
+﻿using System;
+
+namespace HorsesEmpire
 {
     public partial class MainPage : ContentPage
     {
