@@ -10,9 +10,8 @@
             <RowDefinition Height="70"/>
         </Grid.RowDefinitions>
 
-
-
-
+        
+        <Button  Grid.Row="1" HorizontalOptions="Fill" VerticalOptions="Fill" />
 
 
 
