@@ -20,12 +20,22 @@
             Grid.Row="2"
             JustifyContent="SpaceAround" 
             Padding="10">
+
+            <Button>
+                <Button.ImageSource>
+                    <FileImageSource File="coming.svg"/>
+                </Button.ImageSource>
+                <Button.Text>
+                    Coming Soon
+                </Button.Text>
+            </Button>
+
+            <!--<Button Text="Coming Soon" />-->
             
-            <Button Text="1" />
-            <Button Text="2" />
-            <Button Text="3" />
-            <Button Text="4" />
-            <Button Text="5" />
+            <Button Text="Horses" />
+            <Button Text="Home" />
+            <Button Text="Shop" />
+            <Button Text="Statistics" />
             
         </FlexLayout>
 
