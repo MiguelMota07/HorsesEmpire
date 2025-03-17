@@ -400,7 +400,7 @@
 
     <Style TargetType="Shell" ApplyToDerivedTypes="True">
         <Setter Property="Shell.BackgroundColor" Value="{StaticResource Color50}" />
-        <Setter Property="Shell.ForegroundColor" Value="{StaticResource Color100950}" />
+        <Setter Property="Shell.ForegroundColor" Value="{StaticResource Color100}" />
         <Setter Property="Shell.TitleColor" Value="{StaticResource Color950}" />
         <Setter Property="Shell.DisabledColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray950}}" />
         <Setter Property="Shell.UnselectedColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray200}}" />
