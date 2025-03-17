@@ -9,8 +9,8 @@
     <Color x:Key="SecondaryDarkText">#9880e5</Color>
 
     <Color x:Key="Primary">#04a2f3</Color>
-    <Color x:Key="Secundar">#0081d0</Color>
-    <Color x:Key="Terciary">#0066a9</Color>
+    <Color x:Key="Secondary">#0081d0</Color>
+    <Color x:Key="Tertiary">#0066a9</Color>
 
     <Color x:Key="Color50">#eff9ff</Color>
     <Color x:Key="Color100">#dff1ff</Color>
