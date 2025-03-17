@@ -23,7 +23,7 @@
             
             <Button Text="1" />
             <Button Text="2" />
-            <Button Text="&#xe87c;" FontFamily="MaterialIcons" />
+            <Button Text="3" />
             <Button Text="4" />
             <Button Text="5" />
             
