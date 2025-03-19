@@ -9,10 +9,20 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="70"/>
         </Grid.RowDefinitions>
-
-        <Label Grid.Row="0" x:Name="money" Text="1000000€" FontSize="50" />
-        <Button  Grid.Row="1" HorizontalOptions="Fill" VerticalOptions="Fill" />
-
+        <Frame CornerRadius="20" Margin="10,0,10,0" BorderColor="Transparent" BackgroundColor="{StaticResource Color200}" Padding="0">
+            <FlexLayout BackgroundColor="Transparent" Grid.Row="0"  Margin="5,0,5,0" JustifyContent="End" AlignItems="Center">
+                <Frame Padding="10" BorderColor="Transparent" BackgroundColor="Transparent">
+                    <VerticalStackLayout Spacing="10">
+                        <Label x:Name="money" Margin="0,18,5,0" Text="0€" FontSize="30" TextColor="Black"/>
+                        <Label x:Name="moneypersecond" Text="0€/s" FontSize="13" TextColor="Black"/>
+                    </VerticalStackLayout>
+                </Frame>
+            </FlexLayout>
+        </Frame>
+        <Button  Grid.Row="1" Margin="10"  HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="{StaticResource Color100}"/>
+        <Border Grid.Row="1">
+            <Label x:Name="moneyperclick" Text="1€/click"/>
+        </Border>
 
 
         <!-- Menu Bar -->
