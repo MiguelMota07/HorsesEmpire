@@ -23,9 +23,9 @@
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="0,0,20,20"/>
             </Border.StrokeShape>
-            <FlexLayout Margin="0,10,0,0" BackgroundColor="{StaticResource Color200}"   JustifyContent="Center">
-                <Label x:Name="moneyperclick" TextColor="{StaticResource Color950}" Text="1€/click"/>
-                <Button x:Name="upgradeclick" />
+            <FlexLayout Margin="0,10,0,0" BackgroundColor="{StaticResource Color200}" AlignItems="Center"  JustifyContent="Center"  >
+                <Label x:Name="moneyperclick" TextColor="{StaticResource Color950}" Margin="10" Text="1€/click"/>
+                <Button x:Name="upgradeclick" CornerRadius="5" HeightRequest="22" Padding="5,0,5,0" Margin="20,5,0,5"  FontSize="10" Text="Upgrade Click 10€" TextColor="#000000"/>
             </FlexLayout>
         </Border>
         <Button  Grid.Row="1" ZIndex="1" Margin="10"  HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="{StaticResource Color100}"/>
