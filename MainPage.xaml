@@ -21,21 +21,33 @@
             JustifyContent="SpaceAround" 
             Padding="10">
 
-            <Button>
-                <Button.ImageSource>
-                    <FileImageSource File="coming.svg"/>
-                </Button.ImageSource>
-                <Button.Text>
-                    Coming Soon
-                </Button.Text>
-            </Button>
+            <StackLayout>
+                <Image Source="coming.png" WidthRequest="30" HeightRequest="30"/>
+                <Label FontSize="10">Coming soon</Label>
+            </StackLayout>
+            <StackLayout>
+                <Image Source="horse.png" WidthRequest="30" HeightRequest="30"/>
+                <Label FontSize="10">Horses</Label>
+            </StackLayout>
+            <StackLayout>
+                <Image Source="home.png" WidthRequest="30" HeightRequest="30"/>
+                <Label FontSize="10">Home</Label>
+            </StackLayout>
+            <StackLayout>
+                <Image Source="shop.png" WidthRequest="30" HeightRequest="30"/>
+                <Label FontSize="10">Shop</Label>
+            </StackLayout>
+            <StackLayout>
+                <Image Source="statistics.png" WidthRequest="30" HeightRequest="30"/>
+                <Label FontSize="10">Statistics</Label>
+            </StackLayout>
 
             <!--<Button Text="Coming Soon" />-->
             
-            <Button Text="Horses" />
+           <!-- <Button Text="Horses" />
             <Button Text="Home" />
             <Button Text="Shop" />
-            <Button Text="Statistics" />
+            <Button Text="Statistics" />-->
             
         </FlexLayout>
 
