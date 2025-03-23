@@ -9,10 +9,27 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="70"/>
         </Grid.RowDefinitions>
-
-        <Label Grid.Row="0" x:Name="money" Text="1000000€" FontSize="50" />
-        <Button  Grid.Row="1" HorizontalOptions="Fill" VerticalOptions="Fill" />
-
+        <Frame CornerRadius="20" Margin="10,0,10,0" BorderColor="Transparent" BackgroundColor="{StaticResource Color200}" Padding="0">
+            <FlexLayout BackgroundColor="Transparent" Grid.Row="0"  Margin="5,0,5,0" JustifyContent="End" AlignItems="Center">
+                <Frame Padding="10" BorderColor="Transparent" BackgroundColor="Transparent">
+                    <VerticalStackLayout Spacing="10">
+                        <Label x:Name="money" Margin="0,18,5,0" Text="0€" FontSize="30" TextColor="{StaticResource Color950}"/>
+                        <Label x:Name="moneypersecond" Text="0€/s" FontSize="13" TextColor="{StaticResource Color950}"/>
+                    </VerticalStackLayout>
+                </Frame>
+            </FlexLayout>
+        </Frame>
+        <Border Grid.Row="1" MaximumHeightRequest="60" Stroke="Transparent"  MaximumWidthRequest="300" ZIndex="2" VerticalOptions="Start">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="0,0,20,20"/>
+            </Border.StrokeShape>
+            <FlexLayout Margin="0,10,0,0" BackgroundColor="{StaticResource Color200}" AlignItems="Center"  JustifyContent="Center"  >
+                <Label x:Name="moneyperclick" TextColor="{StaticResource Color950}" Margin="10" Text="1€/click"/>
+                <Button x:Name="upgradeclick" CornerRadius="5" HeightRequest="22" Padding="5,0,5,0" Margin="20,5,0,5"  FontSize="10" Text="Upgrade Click 10€" TextColor="#000000"/>
+            </FlexLayout>
+        </Border>
+        <Button  Grid.Row="1" ZIndex="1" Margin="10"  HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="{StaticResource Color100}"/>
+        
 
 
         <!-- Menu Bar -->
