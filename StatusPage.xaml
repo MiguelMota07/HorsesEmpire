@@ -6,7 +6,6 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="150"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="70"/>
         </Grid.RowDefinitions>
 
             <Border Grid.Row="0" Margin="10,30,10,0"  BackgroundColor="{StaticResource Color400}">
@@ -28,51 +27,6 @@
                 <Label x:Name="allthemoney" FontAttributes="Bold" Text="99" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" TextColor="{StaticResource Color50}" />
             </Grid>
             </Border>
-
-
-        <!-- Menu Bar -->
-            <FlexLayout 
-            Grid.Row="2"
-            JustifyContent="SpaceAround" 
-            Padding="10">
-
-                <StackLayout>
-                    <Image Source="coming.png" WidthRequest="30" HeightRequest="30"/>
-                    <Label FontSize="10">Coming soon</Label>
-                </StackLayout>
-                <StackLayout>
-                    <Image Source="horse.png" WidthRequest="30" HeightRequest="30"/>
-                    <Label FontSize="10">Horses</Label>
-                </StackLayout>
-            <StackLayout>
-                <StackLayout.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="gohome" />
-                </StackLayout.GestureRecognizers>
-                <Image Source="home.png" WidthRequest="30" HeightRequest="30"/>
-                    <Label FontSize="10">Home</Label>
-                </StackLayout>
-                <StackLayout>
-                    <Image Source="shop.png" WidthRequest="30" HeightRequest="30"/>
-                    <Label FontSize="10">Shop</Label>
-                </StackLayout>
-                <StackLayout>
-                <!--<StackLayout.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="gostatistics" />
-                </StackLayout.GestureRecognizers>-->
-                <Image Source="statistics.png" WidthRequest="30" HeightRequest="30"/>
-                    <Label FontSize="10">Statistics</Label>
-                </StackLayout>
-
-                <!--<Button Text="Coming Soon" />-->
-
-                <!-- <Button Text="Horses" />
-            <Button Text="Home" />
-            <Button Text="Shop" />
-            <Button Text="Statistics" />-->
-
-            </FlexLayout>
-
-
 
         </Grid>
 

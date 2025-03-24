@@ -5,11 +5,10 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="150"/>
+            <RowDefinition  Height="150"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="70"/>
         </Grid.RowDefinitions>
-        <Frame CornerRadius="20" Margin="10,0,10,0" BorderColor="Transparent" BackgroundColor="{StaticResource Color200}" Padding="0">
+        <Frame  CornerRadius="20" Margin="10,10,10,0" BorderColor="Transparent" BackgroundColor="{StaticResource Color200}" Padding="0">
             <FlexLayout BackgroundColor="Transparent" Grid.Row="0"  Margin="5,0,5,0" JustifyContent="End" AlignItems="Center">
                 <Frame Padding="10" BorderColor="Transparent" BackgroundColor="Transparent">
                     <VerticalStackLayout Spacing="10">
@@ -29,49 +28,6 @@
             </FlexLayout>
         </Border>
         <Button  Grid.Row="1" ZIndex="1" Margin="10"  HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="{StaticResource Color100}"/>
-        
-
-
-        <!-- Menu Bar -->
-        <FlexLayout 
-            Grid.Row="2"
-            JustifyContent="SpaceAround" 
-            Padding="10">
-
-            <StackLayout>
-                <Image Source="coming.png" WidthRequest="30" HeightRequest="30"/>
-                <Label FontSize="10">Coming soon</Label>
-            </StackLayout>
-            <StackLayout>
-                <Image Source="horse.png" WidthRequest="30" HeightRequest="30"/>
-                <Label FontSize="10">Horses</Label>
-            </StackLayout>
-            <StackLayout>
-                <Image Source="home.png" WidthRequest="30" HeightRequest="30"/>
-                <Label FontSize="10">Home</Label>
-            </StackLayout>
-            <StackLayout>
-                <Image Source="shop.png" WidthRequest="30" HeightRequest="30"/>
-                <Label FontSize="10">Shop</Label>
-            </StackLayout>
-            <StackLayout>
-                <StackLayout.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="gostatistics" />
-                </StackLayout.GestureRecognizers>
-                <Image Source="statistics.png" WidthRequest="30" HeightRequest="30"/>
-                <Label FontSize="10">Statistics</Label>
-            </StackLayout>
-
-            <!--<Button Text="Coming Soon" />-->
-            
-           <!-- <Button Text="Horses" />
-            <Button Text="Home" />
-            <Button Text="Shop" />
-            <Button Text="Statistics" />-->
-            
-        </FlexLayout>
-
-
 
     </Grid>
 
