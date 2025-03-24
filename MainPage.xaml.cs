@@ -11,6 +11,11 @@ namespace HorsesEmpire
             InitializeComponent();
         }
 
+        public async void gostatistics (object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new StatusPage());
+        }
+
     }
 
 }

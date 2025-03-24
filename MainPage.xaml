@@ -55,6 +55,9 @@
                 <Label FontSize="10">Shop</Label>
             </StackLayout>
             <StackLayout>
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="gostatistics" />
+                </StackLayout.GestureRecognizers>
                 <Image Source="statistics.png" WidthRequest="30" HeightRequest="30"/>
                 <Label FontSize="10">Statistics</Label>
             </StackLayout>
