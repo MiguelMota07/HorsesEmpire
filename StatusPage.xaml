@@ -2,33 +2,34 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HorsesEmpire.StatusPage">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="150"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
 
-            <Border Grid.Row="0" Margin="10,30,10,0"  BackgroundColor="{StaticResource Color400}">
+    <VerticalStackLayout>
+        <Border  Margin="10,30,10,0" MinimumHeightRequest="200" BackgroundColor="{StaticResource Color400}">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="20,20,20,20"/>
             </Border.StrokeShape>
-            <Grid  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                <Label Text="Número de clicks" FontAttributes="Bold"  TextColor="{StaticResource Color50}" Grid.Row="0" Grid.Column="0" Margin="20"  VerticalOptions="Center" />
-                <Label x:Name="numerofclicks" FontAttributes="Bold" Text="99" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" TextColor="{StaticResource Color50}" />
-                <Label Text="Dinheiro Total Ganho" FontAttributes="Bold"  TextColor="{StaticResource Color50}" Grid.Row="1" Grid.Column="0" Margin="20" VerticalOptions="Center" />
-                <Label x:Name="allthemoney" FontAttributes="Bold" Text="99€" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" TextColor="{StaticResource Color50}" />
-            </Grid>
-            </Border>
+            <FlexLayout 
+                Wrap="Wrap" 
+                JustifyContent="SpaceBetween"
+                AlignContent="SpaceAround"
+                AlignItems="Center"
+                Direction="Row"
+                Margin="20">
+                
+                <Label Text="Número de clicks" FontSize="15"  FontAttributes="Bold"  TextColor="{StaticResource Color50}"  FlexLayout.Basis="50%" />
+                <Label x:Name="numerofclicks" HorizontalOptions="End" FontSize="15"  FontAttributes="Bold" Text="99"  TextColor="{StaticResource Color50}" FlexLayout.Basis="50%" />
+                
+                <Label Text="Dinheiro Total Ganho" FontSize="15" FontAttributes="Bold"  TextColor="{StaticResource Color50}"  VerticalOptions="Center" FlexLayout.Basis="50%" />
+                <Label x:Name="allthemoney" HorizontalOptions="End" FontSize="15" FontAttributes="Bold" Text="99€"   TextColor="{StaticResource Color50}" FlexLayout.Basis="50%" />
+                
+                <Label Text="Assets" FontSize="15" FontAttributes="Bold"  TextColor="{StaticResource Color50}"  FlexLayout.Basis="50%"/>
+                <Label x:Name="assets" HorizontalOptions="End" FontSize="15" FontAttributes="Bold" Text="99€"  TextColor="{StaticResource Color50}" FlexLayout.Basis="50%"/>
+            </FlexLayout>
+        </Border>
+        <Button CornerRadius="20" Text="Recomeçar Jogo" BackgroundColor="{StaticResource Red}" Margin="10,30,10,0" />
 
-        </Grid>
+    </VerticalStackLayout>
+
 
 
 </ContentPage>
