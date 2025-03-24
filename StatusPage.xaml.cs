@@ -8,8 +8,5 @@ public partial class StatusPage : ContentPage
 	{
 		InitializeComponent();
 	}
-    public async void gohome(object sender, EventArgs e)
-    {
-        await Navigation.PushAsync(new MainPage());
-    }
+    
 }
