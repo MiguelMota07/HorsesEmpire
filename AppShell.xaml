@@ -7,9 +7,25 @@
     Shell.FlyoutBehavior="Disabled"
     Title="HorsesEmpire">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <TabBar>
+        <Tab Icon="coming.png" Title="Coming soon">
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
+        </Tab>
+        <Tab Icon="horse.png" Title="Horses">
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
+        </Tab>
+        <Tab Icon="home.png" Title="Home">
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
+        </Tab>
+        <Tab Icon="shop.png" Title="Shop">
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
+        </Tab>
+        <Tab Icon="statistics.png" Title="Statistics">
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
+        </Tab>
+    </TabBar>
+    
+    
+    
 
 </Shell>
