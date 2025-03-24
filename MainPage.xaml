@@ -33,40 +33,45 @@
 
 
         <!-- Menu Bar -->
-        <FlexLayout 
+        <Grid
             Grid.Row="2"
-            JustifyContent="SpaceAround" 
             Padding="10">
 
-            <StackLayout>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <FlexLayout Direction="Column" Grid.Column="0" AlignItems="Center">
                 <Image Source="coming.png" WidthRequest="30" HeightRequest="30"/>
                 <Label FontSize="10">Coming soon</Label>
-            </StackLayout>
-            <StackLayout>
+            </FlexLayout>
+
+            <FlexLayout Direction="Column" Grid.Column="1" AlignItems="Center">
                 <Image Source="horse.png" WidthRequest="30" HeightRequest="30"/>
                 <Label FontSize="10">Horses</Label>
-            </StackLayout>
-            <StackLayout>
+            </FlexLayout>
+
+            <FlexLayout Direction="Column" Grid.Column="2" AlignItems="Center">
                 <Image Source="home.png" WidthRequest="30" HeightRequest="30"/>
                 <Label FontSize="10">Home</Label>
-            </StackLayout>
-            <StackLayout>
+            </FlexLayout>
+
+            <FlexLayout Direction="Column" Grid.Column="3" AlignItems="Center">
                 <Image Source="shop.png" WidthRequest="30" HeightRequest="30"/>
                 <Label FontSize="10">Shop</Label>
-            </StackLayout>
-            <StackLayout>
+            </FlexLayout>
+
+            <FlexLayout Direction="Column" Grid.Column="4" AlignItems="Center">
                 <Image Source="statistics.png" WidthRequest="30" HeightRequest="30"/>
                 <Label FontSize="10">Statistics</Label>
-            </StackLayout>
+            </FlexLayout>
 
-            <!--<Button Text="Coming Soon" />-->
-            
-           <!-- <Button Text="Horses" />
-            <Button Text="Home" />
-            <Button Text="Shop" />
-            <Button Text="Statistics" />-->
-            
-        </FlexLayout>
+        </Grid>
+
 
 
 
