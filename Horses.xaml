@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HorsesEmpire.Horses">
+
+    <StackLayout>
+
+        <Border BackgroundColor="{StaticResource Color200}" HorizontalOptions="End" Margin="0, 10, 10,0" Padding="5">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="5,5,5,5"/>
+            </Border.StrokeShape>
+            <Label Text="1/10" FontAttributes="Bold" FontSize="Medium"/>
+        </Border>
+
+
+        <ScrollView>
+
+            <Border Margin="10,10,10,0" BackgroundColor="{StaticResource Color200}">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="16,16,16,16"/>
+                </Border.StrokeShape>
+                <Grid ColumnDefinitions="100, *" RowDefinitions="*" Padding="10" ColumnSpacing="10">
+
+                    <Border Grid.Column="0" HeightRequest="100" WidthRequest="100" BackgroundColor="{StaticResource Color400}">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="20,20,20,20"/>
+                        </Border.StrokeShape>
+                        <Image  Margin="10,30,10,0" HeightRequest="100" WidthRequest="100" Source="horse.png"/>
+                    </Border>
+
+                    <StackLayout Grid.Column="1">
+
+                        <Label Text="JailhouseRock" FontSize="18" Margin="0,0,0,10" FontAttributes="Bold"  TextColor="{StaticResource Color950}"/>
+
+                        <FlexLayout Margin="0,0,0,10">
+                            <Border Margin="0, 0, 5, 0"  HeightRequest="40" WidthRequest="40" BackgroundColor="{StaticResource Color400}">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="3"/>
+                                </Border.StrokeShape>
+                                <Image HeightRequest="20" WidthRequest="20" Source="horse.png"/>
+                            </Border>
+                            <Border Margin="0, 0, 5, 0"  HeightRequest="40" WidthRequest="40" BackgroundColor="{StaticResource Color400}">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="3"/>
+                                </Border.StrokeShape>
+                                <Image HeightRequest="20" WidthRequest="20" Source="horse.png"/>
+                            </Border>
+                            <Border Margin="0, 0, 5, 0"  HeightRequest="40" WidthRequest="40" BackgroundColor="{StaticResource Color400}">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="3"/>
+                                </Border.StrokeShape>
+                                <Image HeightRequest="20" WidthRequest="20" Source="horse.png"/>
+                            </Border>
+                        </FlexLayout>
+
+                        <FlexLayout
+                            Margin="0,10,0,10"
+                            Direction="Row"
+                            AlignContent="Center"
+                            AlignItems="Center"
+                            JustifyContent="End">
+
+                            <Label Text="99€/s" FontSize="15" TextColor="{StaticResource Color950}" HorizontalOptions="End" Margin="0,0,10,0"/>
+                            <Button Text="Vender por 1000€" BackgroundColor="{StaticResource Red}" HorizontalOptions="End"/>
+                        </FlexLayout>
+
+                    </StackLayout>
+
+                </Grid>
+            </Border>
+
+
+        </ScrollView>
+        
+
+    </StackLayout>
+
+    
+
+
+
+</ContentPage>

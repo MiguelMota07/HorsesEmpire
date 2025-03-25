@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8" ?>
 <Shell
     x:Class="HorsesEmpire.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -8,13 +7,13 @@
     Title="HorsesEmpire">
 
     <TabBar>
-        <Tab Icon="coming.png" Title="Coming soon">
+        <Tab x:Name="ComingSoonTab" Icon="coming.png" Title="Coming soon">
             <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
         </Tab>
         <Tab Icon="horse.png" Title="Horses">
-            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
+            <ShellContent ContentTemplate="{DataTemplate local:Horses}" />
         </Tab>
-        <Tab Icon="home.png" Title="Home">
+        <Tab x:Name="HomeTab" Icon="home.png" Title="Home">
             <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
         </Tab>
         <Tab Icon="shop.png" Title="Shop">
@@ -24,8 +23,4 @@
             <ShellContent ContentTemplate="{DataTemplate local:StatusPage}" />
         </Tab>
     </TabBar>
-    
-    
-    
-
 </Shell>
