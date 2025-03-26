@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HorsesEmpire.StorePage">
+
+    <VerticalStackLayout>
+        <Grid WidthRequest="300">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Border Stroke="{StaticResource Color950}"  Grid.Column="0"  Padding="5">
+                <Label Text="Cavalos" HorizontalOptions="Center" />
+            </Border>
+
+            <Border Stroke="{StaticResource Color950}"  Grid.Column="1" Padding="5">
+                <Label Text="Upgrades" HorizontalOptions="Center" />
+            </Border>
+
+            <Border Stroke="{StaticResource Color950}"  Grid.Column="2"  Padding="5">
+                <Label Text="Estábulo" HorizontalOptions="Center" />
+            </Border>
+        </Grid>
+        <ScrollView>
+            
+        </ScrollView>
+    </VerticalStackLayout>
+</ContentPage>
