@@ -17,7 +17,8 @@ namespace HorsesEmpire
        {
             App.Money += App.MoneyPerClick;
             App.AllMoney += App.MoneyPerClick;
-            
+            App.ClickNumber++;
+
             money.Text = App.Money.ToString() + "€";
         }
 

@@ -7,6 +7,7 @@
         public static int MoneyPerSecond { get; set; }
         public static int ClickUpgradeCost { get; set; }
         public static int AllMoney { get; set; }
+        public static int ClickNumber { get; set; }
 
         public App()
         {
