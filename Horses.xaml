@@ -13,7 +13,7 @@
         </Border>
 
 
-        <ScrollView>
+        <ScrollView VerticalOptions="Fill">
 
             <Border Margin="10,10,10,0" BackgroundColor="{StaticResource Color200}">
                 <Border.StrokeShape>
@@ -33,23 +33,32 @@
                         <Label Text="JailhouseRock" FontSize="18" Margin="0,0,0,10" FontAttributes="Bold"  TextColor="{StaticResource Color950}"/>
 
                         <FlexLayout Margin="0,0,0,10">
-                            <Border Margin="0, 0, 5, 0"  HeightRequest="40" WidthRequest="40" BackgroundColor="{StaticResource Color400}">
+                            <Border Margin="0, 0, 5, 0"  HeightRequest="45" WidthRequest="40" BackgroundColor="{StaticResource Color400}">
                                 <Border.StrokeShape>
                                     <RoundRectangle CornerRadius="3"/>
                                 </Border.StrokeShape>
-                                <Image HeightRequest="20" WidthRequest="20" Source="horse.png"/>
+                                <StackLayout>
+                                    <Image HeightRequest="25" WidthRequest="25" Source="horse.png"/>
+                                    <Label Text="X2" HorizontalOptions="Center" FontSize="10" />
+                                </StackLayout>
                             </Border>
-                            <Border Margin="0, 0, 5, 0"  HeightRequest="40" WidthRequest="40" BackgroundColor="{StaticResource Color400}">
+                            <Border Margin="0, 0, 5, 0"  HeightRequest="45" WidthRequest="40" BackgroundColor="{StaticResource Color400}">
                                 <Border.StrokeShape>
                                     <RoundRectangle CornerRadius="3"/>
                                 </Border.StrokeShape>
-                                <Image HeightRequest="20" WidthRequest="20" Source="horse.png"/>
+                                <StackLayout>
+                                    <Image HeightRequest="25" WidthRequest="25" Source="horse.png"/>
+                                    <Label Text="X2" HorizontalOptions="Center" FontSize="10" />
+                                </StackLayout>
                             </Border>
-                            <Border Margin="0, 0, 5, 0"  HeightRequest="40" WidthRequest="40" BackgroundColor="{StaticResource Color400}">
+                            <Border Margin="0, 0, 5, 0"  HeightRequest="45" WidthRequest="40" BackgroundColor="{StaticResource Color400}">
                                 <Border.StrokeShape>
                                     <RoundRectangle CornerRadius="3"/>
                                 </Border.StrokeShape>
-                                <Image HeightRequest="20" WidthRequest="20" Source="horse.png"/>
+                                <StackLayout>
+                                    <Image HeightRequest="25" WidthRequest="25" Source="horse.png"/>
+                                    <Label Text="X2" HorizontalOptions="Center" FontSize="10" />
+                                </StackLayout>
                             </Border>
                         </FlexLayout>
 
@@ -69,9 +78,46 @@
                 </Grid>
             </Border>
 
-
+            
         </ScrollView>
-        
+        <Border x:Name="Horsetoolpopup" BackgroundColor="{StaticResource Color300}" Padding="5" Margin="10,0,10,0" HeightRequest="150" HorizontalOptions="Fill" VerticalOptions="EndAndExpand" ZIndex="20">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="20,20,0,0"/>
+            </Border.StrokeShape>
+            <ScrollView>
+                <FlexLayout Wrap="Wrap" Margin="5" Direction="Row" JustifyContent="Start">
+                    <Border Margin="1"  HeightRequest="45" WidthRequest="40" BackgroundColor="{StaticResource Color400}">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="3"/>
+                        </Border.StrokeShape>
+                        <StackLayout>
+                            <Image HeightRequest="25" WidthRequest="25" Source="horse.png"/>
+                            <Label Text="X2" HorizontalOptions="Center" VerticalOptions="End"  FontSize="10" />
+                        </StackLayout>
+                    </Border>
+                    <Border Margin="1"    HeightRequest="45" WidthRequest="40" BackgroundColor="{StaticResource Color400}">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="3"/>
+                        </Border.StrokeShape>
+                        <StackLayout>
+                            <Image HeightRequest="25" WidthRequest="25" Source="horse.png"/>
+                            <Label Text="X2" HorizontalOptions="Center" FontSize="10" />
+                        </StackLayout>
+                    </Border>
+                    <Border Margin="1"   HeightRequest="45" WidthRequest="40" BackgroundColor="{StaticResource Color400}">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="3"/>
+                        </Border.StrokeShape>
+                        <StackLayout>
+                            <Image HeightRequest="25" WidthRequest="25" Source="horse.png"/>
+                            <Label Text="X2" HorizontalOptions="Center" FontSize="10" />
+                        </StackLayout>
+                    </Border>
+                </FlexLayout>
+                
+            </ScrollView>
+            
+        </Border>
 
     </StackLayout>
 
