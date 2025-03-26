@@ -36,7 +36,7 @@ namespace HorsesEmpire
 
                 moneyperclick.Text = App.MoneyPerClick.ToString() + "€/click";
                 money.Text = App.Money.ToString() + "€";
-                upgradeclick.Text = App.ClickUpgradeCost.ToString() + "€";
+                upgradeclick.Text = "Upgrade Click " + App.ClickUpgradeCost.ToString() + "€";
             }
         }
     }
