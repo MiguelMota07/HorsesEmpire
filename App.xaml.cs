@@ -28,11 +28,11 @@
 			{
 				Id = 1,
 				Name = "Horse 1",
-				BaseProduction = 0.5m,
-				BuyPrice = 100m,
-				SellPrice = 50m,
+				BaseProduction = 10,
+				BuyPrice = 10000,
+				SellPrice = 9000,
 				IsSold = false,
-				Upgrades = new List<int>()
+				EquipmentIds = new List<int>()
 			};
 
 			Info.Horses.Add(horse);

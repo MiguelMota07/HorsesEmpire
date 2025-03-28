@@ -6,15 +6,23 @@ using System.Threading.Tasks;
 
 namespace HorsesEmpire
 {
+	public class Equipment{
+		public int Id { get; set; }
+		public required string Name { get; set; }
+		public decimal Multiplier { get; set; }
+		public decimal Price { get; set; }
+		public int SoldAmount { get; set; }
+		public int InUse { get; set; }
+	}
 	public class Horse
 	{
 		public int Id { get; set; }
 		public required string Name { get; set; }
-		public decimal BaseProduction { get; set; }
-		public decimal BuyPrice { get; set; }
-		public decimal SellPrice { get; set; }
+		public int BaseProduction { get; set; }
+		public int BuyPrice { get; set; }
+		public int SellPrice { get; set; }
 		public bool IsSold { get; set; }
-		public List<int> Upgrades { get; set; } = new List<int>();
+		public List<int> EquipmentIds { get; set; } = new List<int>();
 	}
 
 	internal class Info

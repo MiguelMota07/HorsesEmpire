@@ -13,8 +13,8 @@ namespace HorsesEmpire
             upgradeclick.Text = "Upgrade Click " + Info.ClickUpgradeCost.ToString() + "€";
         }
 
-       public void OnClickMoneyButton(object sender, EventArgs e)
-       {
+		public void OnClickMoneyButton(object sender, EventArgs e)
+		{
             Info.Money += Info.MoneyPerClick;
             Info.AllMoney += Info.MoneyPerClick;
             Info.ClickNumber++;
@@ -22,8 +22,8 @@ namespace HorsesEmpire
             money.Text = Info.Money.ToString() + "€";
         }
 
-       public void OnClickUpgradeButon(object sender, EventArgs e)
-       {
+		public void OnClickUpgradeButon(object sender, EventArgs e)
+		{
             float upcost = Info.ClickUpgradeCost;
             int Money = Info.Money;
 
@@ -39,6 +39,8 @@ namespace HorsesEmpire
                 money.Text = Info.Money.ToString() + "€";
                 upgradeclick.Text = "Upgrade Click " + Info.ClickUpgradeCost.ToString() + "€";
             }
+
+            
         }
     }
 
