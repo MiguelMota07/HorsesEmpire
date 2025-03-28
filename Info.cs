@@ -25,6 +25,8 @@ namespace HorsesEmpire
 		private static int clickUpgradeCost;
 		private static int allMoney;
 		private static int clickNumber;
+		private static int horsesSpaces;
+		private static long lastSave;
 		private static List<Horse> horses = new List<Horse>();
 
 		public static int Money
@@ -63,9 +65,26 @@ namespace HorsesEmpire
 			set => clickNumber = value >= 0 ? value : 0; // Example validation
 		}
 
-		public static List<Horse> Horses
+        public static int HorsesSpaces
+        {
+            get => horsesSpaces;
+            set => horsesSpaces = value >= 0 ? value : 0;
+        }
+
+		public static long LastSave
+		{
+			get => lastSave;
+			set => lastSave = value >= 0 ? value : 0;
+		}
+
+        public static List<Horse> Horses
 		{
 			get => horses;
+		}
+
+		public static long GetCurrentDateTime()
+		{
+			return DateTimeOffset.Now.ToUnixTimeSeconds();
 		}
 	}
 }
