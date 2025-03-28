@@ -121,7 +121,21 @@
 
     </StackLayout>
 
-    
+    <!--<CollectionView x:Name="collectionViewPessoas"
+                    ItemsLayout="VerticalList">
+
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Frame BorderColor="LightGray" Margin="10" Padding="10" CornerRadius="10">
+                    <VerticalStackLayout>
+                        <Label Text="{Binding Nome}" FontAttributes="Bold" FontSize="20"/>
+                        <Label Text="{Binding Descricao}" FontSize="16" TextColor="Gray"/>
+                    </VerticalStackLayout>
+                </Frame>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>-->
+
 
 
 
