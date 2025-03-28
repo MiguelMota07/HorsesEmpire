@@ -14,71 +14,77 @@
 
 
         <ScrollView VerticalOptions="Fill">
+            <CollectionView x:Name="horsesview" ItemsLayout="VerticalList">
 
-            <Border Margin="10,10,10,0" BackgroundColor="{StaticResource Color200}">
-                <Border.StrokeShape>
-                    <RoundRectangle CornerRadius="16,16,16,16"/>
-                </Border.StrokeShape>
-                <Grid ColumnDefinitions="100, *" RowDefinitions="*" Padding="10" ColumnSpacing="10">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                <Border Margin="10,10,10,0" BackgroundColor="{StaticResource Color200}">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="16,16,16,16"/>
+                    </Border.StrokeShape>
+                    <Grid ColumnDefinitions="100, *" RowDefinitions="*" Padding="10" ColumnSpacing="10">
 
-                    <Border Grid.Column="0" HeightRequest="100" WidthRequest="100" BackgroundColor="{StaticResource Color400}">
-                        <Border.StrokeShape>
-                            <RoundRectangle CornerRadius="20,20,20,20"/>
-                        </Border.StrokeShape>
-                        <Image  Margin="10,30,10,0" HeightRequest="100" WidthRequest="100" Source="horse.png"/>
+                        <Border Grid.Column="0" HeightRequest="100" WidthRequest="100" BackgroundColor="{StaticResource Color400}">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="20,20,20,20"/>
+                            </Border.StrokeShape>
+                            <Image  Margin="10,30,10,0" HeightRequest="100" WidthRequest="100" Source="horse.png"/>
+                        </Border>
+
+                        <StackLayout Grid.Column="1">
+
+                            <Label Text="{Binding Name}" FontSize="18" Margin="0,0,0,10" FontAttributes="Bold"  TextColor="{StaticResource Color950}"/>
+
+                            <FlexLayout Margin="0,0,0,10">
+                                <Border Margin="0, 0, 5, 0"  HeightRequest="45" WidthRequest="40" BackgroundColor="{StaticResource Color400}">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="3"/>
+                                    </Border.StrokeShape>
+                                    <StackLayout>
+                                        <Image HeightRequest="25" WidthRequest="25" Source="saddle.png"/>
+                                        <Label Text="{Binding EquipmentIds[0].M}" HorizontalOptions="Center" FontSize="10" />
+                                    </StackLayout>
+                                </Border>
+                                <Border Margin="0, 0, 5, 0"  HeightRequest="45" WidthRequest="40" BackgroundColor="{StaticResource Color400}">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="3"/>
+                                    </Border.StrokeShape>
+                                    <StackLayout>
+                                        <Image HeightRequest="25" WidthRequest="25" Source="saddle.png"/>
+                                        <Label Text="{Binding EquipmentIds[1].Multiplier}" HorizontalOptions="Center" FontSize="10" />
+                                    </StackLayout>
+                                </Border>
+                                <Border Margin="0, 0, 5, 0"  HeightRequest="45" WidthRequest="40" BackgroundColor="{StaticResource Color400}">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="3"/>
+                                    </Border.StrokeShape>
+                                    <StackLayout>
+                                        <Image HeightRequest="25" WidthRequest="25" Source="saddle.png"/>
+                                        <Label Text="{Binding EquipmentIds[2]}" HorizontalOptions="Center" FontSize="10" />
+                                    </StackLayout>
+                                </Border>
+                            </FlexLayout>
+
+                            <FlexLayout
+                                Margin="0,10,0,10"
+                                Direction="Row"
+                                AlignContent="Center"
+                                AlignItems="Center"
+                                JustifyContent="End">
+
+                                        <Label Text="{Binding BaseProduction, StringFormat='{}{0}/s'}" FontSize="15" TextColor="{StaticResource Color950}" HorizontalOptions="End" Margin="0,0,10,0"/>
+                                <Button Text="{Binding SellPrice, StringFormat='Vender por {0}€'}" BackgroundColor="{StaticResource Red}" HorizontalOptions="End"/>
+                            </FlexLayout>
+
+                        </StackLayout>
+
+                    </Grid>
                     </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
 
-                    <StackLayout Grid.Column="1">
 
-                        <Label Text="JailhouseRock" FontSize="18" Margin="0,0,0,10" FontAttributes="Bold"  TextColor="{StaticResource Color950}"/>
-
-                        <FlexLayout Margin="0,0,0,10">
-                            <Border Margin="0, 0, 5, 0"  HeightRequest="45" WidthRequest="40" BackgroundColor="{StaticResource Color400}">
-                                <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="3"/>
-                                </Border.StrokeShape>
-                                <StackLayout>
-                                    <Image HeightRequest="25" WidthRequest="25" Source="horse.png"/>
-                                    <Label Text="X2" HorizontalOptions="Center" FontSize="10" />
-                                </StackLayout>
-                            </Border>
-                            <Border Margin="0, 0, 5, 0"  HeightRequest="45" WidthRequest="40" BackgroundColor="{StaticResource Color400}">
-                                <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="3"/>
-                                </Border.StrokeShape>
-                                <StackLayout>
-                                    <Image HeightRequest="25" WidthRequest="25" Source="horse.png"/>
-                                    <Label Text="X2" HorizontalOptions="Center" FontSize="10" />
-                                </StackLayout>
-                            </Border>
-                            <Border Margin="0, 0, 5, 0"  HeightRequest="45" WidthRequest="40" BackgroundColor="{StaticResource Color400}">
-                                <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="3"/>
-                                </Border.StrokeShape>
-                                <StackLayout>
-                                    <Image HeightRequest="25" WidthRequest="25" Source="horse.png"/>
-                                    <Label Text="X2" HorizontalOptions="Center" FontSize="10" />
-                                </StackLayout>
-                            </Border>
-                        </FlexLayout>
-
-                        <FlexLayout
-                            Margin="0,10,0,10"
-                            Direction="Row"
-                            AlignContent="Center"
-                            AlignItems="Center"
-                            JustifyContent="End">
-
-                            <Label Text="99€/s" FontSize="15" TextColor="{StaticResource Color950}" HorizontalOptions="End" Margin="0,0,10,0"/>
-                            <Button Text="Vender por 1000€" BackgroundColor="{StaticResource Red}" HorizontalOptions="End"/>
-                        </FlexLayout>
-
-                    </StackLayout>
-
-                </Grid>
-            </Border>
-
-            
         </ScrollView>
         <Border x:Name="Horsetoolpopup" BackgroundColor="{StaticResource Color300}" Padding="5" Margin="10,0,10,0" HeightRequest="150" HorizontalOptions="Fill" VerticalOptions="EndAndExpand" ZIndex="20">
             <Border.StrokeShape>
@@ -121,8 +127,7 @@
 
     </StackLayout>
 
-    <!--<CollectionView x:Name="collectionViewPessoas"
-                    ItemsLayout="VerticalList">
+    <!--<CollectionView x:Name="horsesview" ItemsLayout="VerticalList">
 
         <CollectionView.ItemTemplate>
             <DataTemplate>

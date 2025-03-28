@@ -31,11 +31,23 @@
 				BaseProduction = 10,
 				BuyPrice = 10000,
 				SellPrice = 9000,
-				IsSold = false,
+				IsSold = true,
 				EquipmentIds = new List<int>()
 			};
 
 			Info.Horses.Add(horse);
+            horse = new Horse
+            {
+                Id = 1,
+                Name = "Horse 1",
+                BaseProduction = 10,
+                BuyPrice = 10000,
+                SellPrice = 9000,
+                IsSold = true,
+                EquipmentIds = new List<int>()
+            };
+
+            Info.Horses.Add(horse);
         }
     }
 }
