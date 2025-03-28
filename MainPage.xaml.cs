@@ -8,36 +8,36 @@ namespace HorsesEmpire
         {
             InitializeComponent();
 
-            moneyperclick.Text = App.MoneyPerClick.ToString() + "€/click";
-            moneypersecond.Text = App.MoneyPerSecond.ToString() + "€/s";
-            upgradeclick.Text = "Upgrade Click " + App.ClickUpgradeCost.ToString() + "€";
+            moneyperclick.Text = Info.MoneyPerClick.ToString() + "€/click";
+            moneypersecond.Text = Info.MoneyPerSecond.ToString() + "€/s";
+            upgradeclick.Text = "Upgrade Click " + Info.ClickUpgradeCost.ToString() + "€";
         }
 
        public void OnClickMoneyButton(object sender, EventArgs e)
        {
-            App.Money += App.MoneyPerClick;
-            App.AllMoney += App.MoneyPerClick;
-            App.ClickNumber++;
+            Info.Money += Info.MoneyPerClick;
+            Info.AllMoney += Info.MoneyPerClick;
+            Info.ClickNumber++;
 
-            money.Text = App.Money.ToString() + "€";
+            money.Text = Info.Money.ToString() + "€";
         }
 
        public void OnClickUpgradeButon(object sender, EventArgs e)
        {
-            float upcost = App.ClickUpgradeCost;
-            int Money = App.Money;
+            float upcost = Info.ClickUpgradeCost;
+            int Money = Info.Money;
 
             if (Money > upcost) {
-                App.Money -= (int)upcost;
-                if (App.MoneyPerClick == 1)
-                    App.MoneyPerClick = 2;
+                Info.Money -= (int)upcost;
+                if (Info.MoneyPerClick == 1)
+                    Info.MoneyPerClick = 2;
                 else
-                    App.MoneyPerClick = (int)(App.MoneyPerClick * 1.5);
-                App.ClickUpgradeCost = (int)(upcost * 2);
+                    Info.MoneyPerClick = (int)(Info.MoneyPerClick * 1.5);
+                Info.ClickUpgradeCost = (int)(upcost * 2);
 
-                moneyperclick.Text = App.MoneyPerClick.ToString() + "€/click";
-                money.Text = App.Money.ToString() + "€";
-                upgradeclick.Text = "Upgrade Click " + App.ClickUpgradeCost.ToString() + "€";
+                moneyperclick.Text = Info.MoneyPerClick.ToString() + "€/click";
+                money.Text = Info.Money.ToString() + "€";
+                upgradeclick.Text = "Upgrade Click " + Info.ClickUpgradeCost.ToString() + "€";
             }
         }
     }

@@ -12,8 +12,8 @@ public partial class StatusPage : ContentPage
     protected override void OnAppearing()
     {
         base.OnAppearing();
-        numerofclicks.Text = App.ClickNumber.ToString();
-        allthemoney.Text = App.AllMoney.ToString() + "€";
+        numerofclicks.Text = Info.ClickNumber.ToString();
+        allthemoney.Text = Info.AllMoney.ToString() + "€";
         assets.Text = 0 + "€";
     }
 
