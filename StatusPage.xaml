@@ -22,7 +22,7 @@
                 <Label Text="Dinheiro Total Ganho" FontSize="15" FontAttributes="Bold"  TextColor="{StaticResource Color50}"  VerticalOptions="Center" FlexLayout.Basis="50%" />
                 <Label x:Name="allthemoney" HorizontalOptions="End" FontSize="15" FontAttributes="Bold" Text="99€"   TextColor="{StaticResource Color50}" FlexLayout.Basis="50%" />
                 
-                <Label Text="Assets" FontSize="15" FontAttributes="Bold"  TextColor="{StaticResource Color50}"  FlexLayout.Basis="50%"/>
+                <Label Text="Investido em cavalos" FontSize="15" FontAttributes="Bold"  TextColor="{StaticResource Color50}"  FlexLayout.Basis="50%"/>
                 <Label x:Name="assets" HorizontalOptions="End" FontSize="15" FontAttributes="Bold" Text="99€"  TextColor="{StaticResource Color50}" FlexLayout.Basis="50%"/>
             </FlexLayout>
         </Border>

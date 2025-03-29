@@ -79,12 +79,14 @@ public partial class StorePage : ContentPage
     {
         if (sender is Button button)
         {
-            price = Info.HorsesSpacesPrice;
+            int price = Info.HorsesSpacesPrice;
+            if (Info.Money < price)
+                return;
             Info.Money -= price;
             Info.HorsesSpaces += 5;
-            price = Info.HorsesSpacesPrice * 2;
+            Info.HorsesSpacesPrice = price * 2;
 
-            BuySpaces.Text = $"Comprar +5 - {price}€";
+            BuySpacesButton.Text = $"Comprar +5 - {price}€";
             horsesamount.Text = $"{Info.Horses.Count(x => x.IsSold == true).ToString()}/{Info.HorsesSpaces}";
         }
     }
