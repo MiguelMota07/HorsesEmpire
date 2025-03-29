@@ -22,7 +22,7 @@ namespace HorsesEmpire
 		public int BuyPrice { get; set; }
 		public int SellPrice { get; set; }
 		public bool IsSold { get; set; }
-		public List<int> EquipmentIds { get; set; } = new List<int>();
+		public List<Equipment> Equipments { get; set; } = new List<Equipment>();
 	}
 
 	internal class Info

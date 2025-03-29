@@ -46,7 +46,7 @@ namespace HorsesEmpire
             Info.AllMoney = 0;
             Info.ClickUpgradeCost = 40;
 			Info.ClickNumber = 0;
-            Equipment equipment = new Equipment
+            Equipment equipment1 = new Equipment
             {
                 Id = 1,
                 Name = "Normal Saddle",
@@ -55,8 +55,8 @@ namespace HorsesEmpire
                 SoldAmount = 2,
                 InUse = 1
             };
-            Info.Equipment.Add(equipment);
-            equipment = new Equipment
+            Info.Equipment.Add(equipment1);
+            Equipment equipment2 = new Equipment
             {
                 Id = 2,
                 Name = "Op Saddle",
@@ -65,7 +65,7 @@ namespace HorsesEmpire
                 SoldAmount = 1,
                 InUse = 1
             };
-            Info.Equipment.Add(equipment);
+            Info.Equipment.Add(equipment2);
             Horse horse = new Horse
 			{
 				Id = 1,
@@ -74,7 +74,7 @@ namespace HorsesEmpire
 				BuyPrice = 10000,
 				SellPrice = 9000,
 				IsSold = true,
-				EquipmentIds = new List<int>() { 1,2}
+				Equipments = new List<Equipment>() {equipment1, equipment2}
 			};
 
 			Info.Horses.Add(horse);
@@ -86,7 +86,7 @@ namespace HorsesEmpire
                 BuyPrice = 10000,
                 SellPrice = 9000,
                 IsSold = true,
-                EquipmentIds = new List<int>()
+                Equipments = new List<Equipment>() {equipment2}
             };
 
             Info.Horses.Add(horse);

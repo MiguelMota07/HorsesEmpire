@@ -42,7 +42,7 @@
                                             </Border.StrokeShape>
                                             <StackLayout>
                                                 <Image HeightRequest="25" WidthRequest="25" Source="saddle.png"/>
-                                                <Label Text="{Binding Path=EquipmentIds[0], StringFormat='{0}X'}" HorizontalOptions="Center" FontSize="10" />
+                                                <Label Text="{Binding Path=Equipments[0].Multiplier, StringFormat='{0}X'}" HorizontalOptions="Center" FontSize="10" />
                                             </StackLayout>
                                         </Border>
                                         <Border Margin="0, 0, 5, 0"  HeightRequest="45" WidthRequest="40" BackgroundColor="{StaticResource Color400}">
@@ -51,7 +51,7 @@
                                             </Border.StrokeShape>
                                             <StackLayout>
                                                 <Image HeightRequest="25" WidthRequest="25" Source="saddle.png"/>
-                                                <Label Text="{Binding Path=EquipmentIds[1], StringFormat='{0}X'}" HorizontalOptions="Center" FontSize="10" />
+                                                <Label Text="{Binding Path=Equipments[1].Multiplier, StringFormat='{0}X'}" HorizontalOptions="Center" FontSize="10" />
                                             </StackLayout>
                                         </Border>
                                         <Border Margin="0, 0, 5, 0"  HeightRequest="45" WidthRequest="40" BackgroundColor="{StaticResource Color400}">
@@ -60,7 +60,7 @@
                                             </Border.StrokeShape>
                                             <StackLayout>
                                                 <Image HeightRequest="25" WidthRequest="25" Source="saddle.png"/>
-                                                <Label Text="{Binding Path=EquipmentIds[2], StringFormat='{0}X'}" HorizontalOptions="Center" FontSize="10" />
+                                                <Label Text="{Binding Path=Equipments[2].Multiplier, StringFormat='{0}X'}" HorizontalOptions="Center" FontSize="10" />
                                             </StackLayout>
                                         </Border>
                                     </FlexLayout>
