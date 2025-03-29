@@ -12,6 +12,23 @@ public partial class Horses : ContentPage
     {
         base.OnAppearing();
         horsesview.ItemsSource = Info.Horses.Where(x => x.IsSold == true).ToList();
+        if (Info.Equipment == null)
+        {
+            return;
+        }
+        var expandedEquipmentList = new List<Equipment>();
+
+        foreach (var equipment in Info.Equipment.Where(x => x.SoldAmount > x.InUse))
+        {
+            int availableCount = equipment.SoldAmount - equipment.InUse;
+
+            for (int i = 0; i < availableCount; i++)
+            {
+                expandedEquipmentList.Add(equipment);
+            }
+        }
+
+        equipmentview.ItemsSource = expandedEquipmentList;
 
     }
     /*
@@ -36,7 +53,9 @@ public partial class Horses : ContentPage
         string[] ids = equipmenttochange.Split(',');
         if(sender is Border border)
         {
-                if(equipmenttochange=="")
+            if (border.ClassId.Contains(','))
+            {
+                if (equipmenttochange == "")
                 {
                     Horsetoolpopup.IsVisible = true;
                     equipmenttochange = border.ClassId;
@@ -46,13 +65,18 @@ public partial class Horses : ContentPage
                     equipmenttochange = "";
                     Horsetoolpopup.IsVisible = false;
                 }
-                else if(equipmenttochange != border.ClassId)
+                else if (equipmenttochange != border.ClassId)
                 {
                     equipmenttochange = border.ClassId;
                     Horsetoolpopup.IsVisible = false;
                     await Task.Delay(70);
                     Horsetoolpopup.IsVisible = true;
                 }
+            }
+            else
+            {
+
+            }
         }
 
     }

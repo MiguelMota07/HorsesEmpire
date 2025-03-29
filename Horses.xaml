@@ -99,37 +99,28 @@
             </Border.StrokeShape>
             <ScrollView>
                 <FlexLayout Wrap="Wrap" Margin="5" Direction="Row" JustifyContent="Start">
-                    <Border Margin="1"  HeightRequest="45" WidthRequest="40" BackgroundColor="{StaticResource Color400}">
-                        <Border.StrokeShape>
-                            <RoundRectangle CornerRadius="3"/>
-                        </Border.StrokeShape>
-                        <StackLayout>
-                            <Image HeightRequest="25" WidthRequest="25" Source="horse.png"/>
-                            <Label Text="X2" HorizontalOptions="Center" VerticalOptions="End"  FontSize="10" />
-                        </StackLayout>
-                    </Border>
-                    <Border Margin="1"    HeightRequest="45" WidthRequest="40" BackgroundColor="{StaticResource Color400}">
-                        <Border.StrokeShape>
-                            <RoundRectangle CornerRadius="3"/>
-                        </Border.StrokeShape>
-                        <StackLayout>
-                            <Image HeightRequest="25" WidthRequest="25" Source="horse.png"/>
-                            <Label Text="X2" HorizontalOptions="Center" FontSize="10" />
-                        </StackLayout>
-                    </Border>
-                    <Border Margin="1"   HeightRequest="45" WidthRequest="40" BackgroundColor="{StaticResource Color400}">
-                        <Border.StrokeShape>
-                            <RoundRectangle CornerRadius="3"/>
-                        </Border.StrokeShape>
-                        <StackLayout>
-                            <Image HeightRequest="25" WidthRequest="25" Source="horse.png"/>
-                            <Label Text="X2" HorizontalOptions="Center" FontSize="10" />
-                        </StackLayout>
-                    </Border>
+                    <CollectionView x:Name="equipmentview" ItemsLayout="VerticalList">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Border Margin="1"  HeightRequest="45" WidthRequest="40" BackgroundColor="{StaticResource Color400}">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="3"/>
+                                    </Border.StrokeShape>
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="ChangeEquipment"  />
+                                    </Border.GestureRecognizers>
+                                    <StackLayout>
+                                        <Image HeightRequest="25" WidthRequest="25" Source="horse.png"/>
+                                        <Label Text="X2" HorizontalOptions="Center" VerticalOptions="End"  FontSize="10" />
+                                    </StackLayout>
+                                </Border>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                                
                 </FlexLayout>
-                
+
             </ScrollView>
-            
         </Border>
 
     </StackLayout>

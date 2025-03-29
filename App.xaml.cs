@@ -62,8 +62,8 @@ namespace HorsesEmpire
                 Name = "Op Saddle",
                 Multiplier = 5,
                 Price = 2000,
-                SoldAmount = 1,
-                InUse = 1
+                SoldAmount = 2,
+                InUse = 2
             };
             Info.Equipment.Add(equipment2);
             Horse horse = new Horse
