@@ -81,7 +81,7 @@
                                         AlignItems="Center"
                                         JustifyContent="End">
 
-                                        <Label Text="{Binding BaseProduction, StringFormat='{}{0}/s'}" FontSize="15" TextColor="{StaticResource Color950}" HorizontalOptions="End" Margin="0,0,10,0"/>
+                                        <Label Text="{Binding BaseProduction, StringFormat='{}{0}€/s'}" FontSize="15" TextColor="{StaticResource Color950}" HorizontalOptions="End" Margin="0,0,10,0"/>
                                         <Button Text="{Binding SellPrice, StringFormat='Vender por {0}€'}" BackgroundColor="{StaticResource Red}" HorizontalOptions="End" Clicked="Sellhorse" ClassId="{Binding Id}" />
                                     </FlexLayout>
 

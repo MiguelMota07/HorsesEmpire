@@ -43,6 +43,7 @@ public partial class Horses : ContentPage
             int id =int.Parse(button.ClassId);
             Horse horse = Info.Horses.Single(x => x.Id == id);
             horse.IsSold = false;
+            Info.Money += horse.SellPrice;
             OnAppearing();
         }
     }

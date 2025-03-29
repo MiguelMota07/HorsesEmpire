@@ -8,12 +8,15 @@ namespace HorsesEmpire
         {
             InitializeComponent();
 
+        }
+        protected override void OnAppearing()
+        {
             moneyperclick.Text = Info.MoneyPerClick.ToString() + "€/click";
             moneypersecond.Text = Info.MoneyPerSecond.ToString() + "€/s";
             upgradeclick.Text = "Upgrade Click " + Info.ClickUpgradeCost.ToString() + "€";
+            money.Text = Info.Money.ToString() + "€";
         }
-
-		public void OnClickMoneyButton(object sender, EventArgs e)
+        public void OnClickMoneyButton(object sender, EventArgs e)
 		{
             Info.Money += Info.MoneyPerClick;
             Info.AllMoney += Info.MoneyPerClick;
