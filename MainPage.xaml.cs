@@ -4,10 +4,23 @@ namespace HorsesEmpire
 {
     public partial class MainPage : ContentPage
     {
+        private System.Timers.Timer _moneyUpdateTimer;
         public MainPage()
         {
             InitializeComponent();
 
+
+            _moneyUpdateTimer = new System.Timers.Timer(10000); // 10 em 10 segundos
+            _moneyUpdateTimer.Elapsed += UpdateMoney;
+            _moneyUpdateTimer.AutoReset = true;
+            _moneyUpdateTimer.Start();
+        }
+        private void UpdateMoney(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            Dispatcher.Dispatch(() =>
+            {
+                money.Text = Info.Money.ToString() + "€";
+            });
         }
         protected override void OnAppearing()
         {

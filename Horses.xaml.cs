@@ -11,6 +11,8 @@ public partial class Horses : ContentPage
     protected override void OnAppearing()
     {
         base.OnAppearing();
+        GameData gameData = new GameData();
+        gameData.updateMoney();
         horsesview.ItemsSource = Info.Horses.Where(x => x.IsSold == true).ToList();
         if (Info.Equipments == null)
         {
@@ -42,7 +44,8 @@ public partial class Horses : ContentPage
     {
         if(sender is Button button )  
         {
-            //!update: calculate money per second
+            GameData gameData = new GameData();
+            gameData.updateMoney();
             int id =int.Parse(button.ClassId);
             Horse horse = Info.Horses.Single(x => x.Id == id);
             horse.IsSold = false;
@@ -85,7 +88,9 @@ public partial class Horses : ContentPage
             }
             else
             {
-                //!update: calculate money per second
+                GameData gameData = new GameData();
+                gameData.updateMoney();
+
                 int idnovoequipamento = int.Parse(border.ClassId);
                 Equipment equipment = Info.Equipments.Single(x => x.Id == idnovoequipamento);
                 Horse horse = Info.Horses.Single(x => x.Id == int.Parse(ids[0]));

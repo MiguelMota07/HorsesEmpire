@@ -228,7 +228,7 @@ namespace HorsesEmpire
                 userdata.Attributes["clickUpgradeCost"].Value = Info.ClickUpgradeCost.ToString();
                 userdata.Attributes["clickNumber"].Value = Info.ClickNumber.ToString();
                 userdata.Attributes["horsesSpaces"].Value = Info.HorsesSpaces.ToString();
-                userdata.Attributes["lastSave"].Value = Info.GetCurrentDateTime().ToString();
+                userdata.Attributes["lastSave"].Value = Info.LastSave.ToString();
             }
 
             // Save horses
@@ -277,13 +277,14 @@ namespace HorsesEmpire
             }
 
             doc.Save(Fich);
-            Info.LastSave = Info.GetCurrentDateTime();
         }
 
         public void DeleteGameData()
         {
             if (File.Exists(Fich))
             {
+                Info.Horses.Clear();
+                Info.Equipments.Clear();
                 File.Delete(Fich);
                 InitUserData();
             }
@@ -328,6 +329,52 @@ namespace HorsesEmpire
             equipmentList.Add(new Equipment(6, "Sela Macia", 4.5, 17000, 0, 0));
             equipmentList.Add(new Equipment(7, "Sela Profissional", 10.0, 100000, 0, 0));
         }
+
+        public void updateMoney(bool updated = true)
+		{
+            long currentTime = Info.GetCurrentDateTime();
+            long lastUpdateTime = Info.LastSave;         
+            // Calculate elapsed time since last update
+            long secundsElapsed = currentTime - lastUpdateTime;
+
+            double moneyEarned = 0;
+
+            if (updated == false)
+            {
+                moneyEarned = Info.MoneyPerSecond * secundsElapsed;
+            }
+            else{
+                // Calculate money earned based on horses and equipment
+
+                double incomepersecond = 0;
+                foreach (var horse in Info.Horses.Where(x => x.IsSold == true))
+                {
+                    double baseIncome = horse.BaseProduction;
+
+                    // Apply multipliers from equipment
+                    double equipmentMultiplier = 1;
+                    foreach (var equipment in horse.Equipments)
+                    {
+                        equipmentMultiplier *= equipment.Multiplier;
+                    }
+
+                    // Calculate income for this horse based on time elapsed
+                    double horseIncome = baseIncome * secundsElapsed * equipmentMultiplier;
+                    moneyEarned += horseIncome;
+                    incomepersecond += baseIncome*equipmentMultiplier;
+
+                    
+                }
+                Info.MoneyPerSecond = (int)incomepersecond;
+            }
+
+            // Update user's money
+            Info.Money += (int)moneyEarned;
+            Info.AllMoney += (int)moneyEarned;
+
+            // Update the last update time
+            Info.LastSave = currentTime;
+		}
     }
 
 

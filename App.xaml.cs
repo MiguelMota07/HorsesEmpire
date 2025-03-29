@@ -1,22 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-// using System.Windows.Forms;
-using System.IO;
-using System.Xml;
-using System.Xml.Linq;
-using System.Text.RegularExpressions;
-
+﻿
 namespace HorsesEmpire
 {
     public partial class App : Application
     {
         //public static Info Info { get; set; }
+        private System.Timers.Timer _moneyUpdateTimer;
 
         public App()
         {
@@ -28,6 +16,12 @@ namespace HorsesEmpire
 
             GameData gameData = new GameData();
             gameData.InitUserData();
+
+            // Initialize and start the timer for updating money
+            _moneyUpdateTimer = new System.Timers.Timer(10000); // 10 em 10 segundos
+            _moneyUpdateTimer.Elapsed += UpdateUserMoney;
+            _moneyUpdateTimer.AutoReset = true;
+            _moneyUpdateTimer.Start();
         }
 
         protected override void OnSleep()
@@ -38,6 +32,8 @@ namespace HorsesEmpire
             // Save any unsaved data
             GameData gameData = new GameData();
             gameData.SaveGameData();
+
+            _moneyUpdateTimer?.Stop();
         }
 
         protected override Window CreateWindow(IActivationState activationState)
@@ -51,11 +47,35 @@ namespace HorsesEmpire
 
         private void Window_Destroying(object sender, EventArgs e)
         {
-            // This is called when the window is being destroyed
-            Console.WriteLine("Window is being destroyed");
-            // Perform cleanup operations
             GameData gameData = new GameData();
             gameData.SaveGameData();
+
+            _moneyUpdateTimer?.Stop();
+        }
+
+        protected override void OnResume()
+        {
+            base.OnResume();
+            
+            // Restart the timer when app resumes
+            if (_moneyUpdateTimer != null && !_moneyUpdateTimer.Enabled)
+            {
+                _moneyUpdateTimer.Start();
+                GameData gameData = new GameData();
+                gameData.updateMoney(false);
+            }
+        }
+
+        
+
+        private void UpdateUserMoney(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            GameData gameData = new GameData();
+            gameData.updateMoney(false);
+            Dispatcher.Dispatch(() =>
+            {
+                gameData.updateMoney(false);
+            });
         }
     }
 }
