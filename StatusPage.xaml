@@ -26,7 +26,7 @@
                 <Label x:Name="assets" HorizontalOptions="End" FontSize="15" FontAttributes="Bold" Text="99€"  TextColor="{StaticResource Color50}" FlexLayout.Basis="50%"/>
             </FlexLayout>
         </Border>
-        <Button CornerRadius="20" Text="Recomeçar Jogo" BackgroundColor="{StaticResource Red}" Margin="10,30,10,0" />
+        <Button CornerRadius="20" Text="Recomeçar Jogo" BackgroundColor="{StaticResource Red}" Margin="10,30,10,0" Clicked="DeleteUserData" />
 
     </VerticalStackLayout>
 

@@ -16,5 +16,8 @@ public partial class StatusPage : ContentPage
         allthemoney.Text = Info.AllMoney.ToString() + "€";
         assets.Text = 0 + "€";
     }
-
+    public void DeleteUserData(object sender, EventArgs e)
+    {
+        
+    }
 }
