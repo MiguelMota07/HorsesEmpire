@@ -30,26 +30,29 @@ public partial class Horses : ContentPage
         }
     }
     private string equipmenttochange = "";
-    public void ChangeEquipment(object sender, EventArgs e)
+    public async void ChangeEquipment(object sender, EventArgs e)
     {
 
         string[] ids = equipmenttochange.Split(',');
         if(sender is Border border)
         {
-            if(equipmenttochange=="")
-            {
-                Horsetoolpopup.IsVisible = true;
-                equipmenttochange = border.ClassId;
-            }
-            else if (equipmenttochange == border.ClassId)
-            {
-                equipmenttochange = "";
-                Horsetoolpopup.IsVisible = false;
-            }
-            else if(equipmenttochange != border.ClassId)
-            {
-                equipmenttochange = border.ClassId;
-            }
+                if(equipmenttochange=="")
+                {
+                    Horsetoolpopup.IsVisible = true;
+                    equipmenttochange = border.ClassId;
+                }
+                else if (equipmenttochange == border.ClassId)
+                {
+                    equipmenttochange = "";
+                    Horsetoolpopup.IsVisible = false;
+                }
+                else if(equipmenttochange != border.ClassId)
+                {
+                    equipmenttochange = border.ClassId;
+                    Horsetoolpopup.IsVisible = false;
+                    await Task.Delay(70);
+                    Horsetoolpopup.IsVisible = true;
+                }
         }
 
     }
