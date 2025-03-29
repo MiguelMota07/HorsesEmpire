@@ -1,4 +1,6 @@
-﻿namespace HorsesEmpire
+﻿using System.Xml;
+
+namespace HorsesEmpire
 {
     public partial class App : Application
     {
@@ -17,6 +19,27 @@
 
         private void InitUserData()
         {
+			// string Fich = "info.xml";
+
+			// if (File.Exists(Fich) == false)             
+			// {                 
+			// 	XmlTextWriter FicheiroXml = new XmlTextWriter(Fich, System.Text.Encoding.UTF8);                  
+			// 	//Criar um novo ficheiro                 
+			// 	FicheiroXml.WriteStartDocument(true);                  
+			// 	// Definir o estilo de indentação do ficheiro                  
+			// 	FicheiroXml.Formatting = Formatting.Indented;                 
+			// 	FicheiroXml.Indentation = 2;                  
+			// 	// Criar a raiz                  
+			// 	FicheiroXml.WriteStartElement("associacao");                  
+			// 	// Escrever a estrutura no ficheiro                  
+			// 	FicheiroXml.WriteEndDocument();                 
+			// 	FicheiroXml.Close();             
+			// }          
+		
+
+
+
+
             Info.Money = 0;
             Info.MoneyPerClick = 1;
             Info.MoneyPerSecond = 0;
