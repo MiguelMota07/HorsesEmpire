@@ -18,6 +18,6 @@ public partial class StatusPage : ContentPage
     }
     public void DeleteUserData(object sender, EventArgs e)
     {
-        
+        OnAppearing();
     }
 }
