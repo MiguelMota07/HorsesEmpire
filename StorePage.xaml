@@ -3,14 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HorsesEmpire.StorePage">
 
-    <VerticalStackLayout>
+    <StackLayout>
         <Border BackgroundColor="{StaticResource Color200}" HorizontalOptions="Fill" HeightRequest="50" Margin="10, 10, 10,0" Padding="5">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="5,5,5,5"/>
             </Border.StrokeShape>
             <FlexLayout Direction="Row" AlignItems="Center">
-                <Button Text="Comprar 5 espaços para cavalos - 1000€" FontSize="10" Margin="5,0,10,0" FlexLayout.Basis="82%" Padding="0" HeightRequest="30"/>
-                <Label Text="1/10" FontAttributes="Bold" FontSize="Medium" FlexLayout.Basis="12%"/>
+                <Button Text="Comprar +5 - 1000€" FontSize="10" Margin="5,0,10,0" FlexLayout.Basis="82%" Padding="0" HeightRequest="30"/>
+                <Label x:Name="horsesamount" Text="1/10" FontAttributes="Bold" FontSize="Medium" FlexLayout.Basis="20%"/>
             </FlexLayout>
         </Border>
         <Grid WidthRequest="300" Margin="0,10,0,20" ColumnSpacing="-1">
@@ -19,49 +19,104 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Border Stroke="{StaticResource Color950}"  Grid.Column="0"  Padding="5">
-                <Label Text="Cavalos" HorizontalOptions="Center" />
+            <Border Stroke="{StaticResource Color950}" x:Name="switchhorse" BackgroundColor="{StaticResource Color950}"  Grid.Column="0"  Padding="5">
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="switchstoretohorses"  />
+                </Border.GestureRecognizers>
+                <Label Text="Cavalos" x:Name="switchhorselabel" TextColor="{StaticResource Color50}" HorizontalOptions="Center" />
             </Border>
 
-            <Border Stroke="{StaticResource Color950}"  Grid.Column="1" Padding="5">
-                <Label Text="Upgrades" HorizontalOptions="Center" />
+            <Border Stroke="{StaticResource Color950}" x:Name="switchequipment" Grid.Column="1" Padding="5">
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="switchstoretoequipment"  />
+                </Border.GestureRecognizers>
+                <Label Text="Equipamentos" x:Name="switchequipmentlabel" HorizontalOptions="Center" />
             </Border>
         </Grid>
-        <ScrollView>
-            <Border Margin="10,10,10,0" BackgroundColor="{StaticResource Color200}">
-                <Border.StrokeShape>
-                    <RoundRectangle CornerRadius="16,16,16,16"/>
-                </Border.StrokeShape>
-                <Grid ColumnDefinitions="100, *" RowDefinitions="*" Padding="10" ColumnSpacing="10">
+        <ScrollView VerticalOptions="FillAndExpand">
+            <VerticalStackLayout>
+            <CollectionView x:Name="horsesview" ItemsLayout="VerticalList">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Margin="10,10,10,0" BackgroundColor="{StaticResource Color200}">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="16,16,16,16"/>
+                            </Border.StrokeShape>
+                            <Grid ColumnDefinitions="100, *" RowDefinitions="*" Padding="10" ColumnSpacing="10">
 
-                    <Border Grid.Column="0" HeightRequest="100" WidthRequest="100" BackgroundColor="{StaticResource Color400}">
-                        <Border.StrokeShape>
-                            <RoundRectangle CornerRadius="20,20,20,20"/>
-                        </Border.StrokeShape>
-                        <Image  Margin="10,5,5,5" HeightRequest="100" WidthRequest="100" Source="saddle.png"/>
-                    </Border>
+                                <Border Grid.Column="0" HeightRequest="100" WidthRequest="100" BackgroundColor="{StaticResource Color400}">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="20,20,20,20"/>
+                                    </Border.StrokeShape>
+                                    <Image  Margin="10,5,5,5" HeightRequest="100" WidthRequest="100" Source="horse.png"/>
+                                </Border>
 
-                    <StackLayout Grid.Column="1">
+                                <StackLayout Grid.Column="1">
 
-                        <Label Text="JailhouseRock" FontSize="18" Margin="0,0,0,10" FontAttributes="Bold"  TextColor="{StaticResource Color950}"/>
-                        <Label Text="12€/s" FontSize="14" Margin="10,0,0,10"  TextColor="{StaticResource Color950}"/>
+                                    <Label Text="{Binding Name}" FontSize="18" Margin="0,0,0,10" FontAttributes="Bold"  TextColor="{StaticResource Color950}"/>
+                                    <Label Text="{Binding BaseProduction, StringFormat='{}{0}€/s'}" FontSize="14" Margin="10,0,0,10"  TextColor="{StaticResource Color950}"/>
 
 
 
-                        <FlexLayout
-                            Margin="0,10,0,10"
-                            Direction="Row"
-                            AlignContent="Center"
-                            AlignItems="Center"
-                            JustifyContent="End">
+                                    <FlexLayout
+                                        Margin="0,10,0,10"
+                                        Direction="Row"
+                                        AlignContent="Center"
+                                        AlignItems="Center"
+                                        JustifyContent="End">
 
-                            <Button Text="Comprar por 300€" BackgroundColor="{StaticResource Green}" HorizontalOptions="End"/>
-                        </FlexLayout>
+                                            <Button Text="{Binding BuyPrice, StringFormat='Comprar por {0}€'}" Clicked="Buyhorses" ClassId="{Binding Id}" BackgroundColor="{StaticResource Green}" HorizontalOptions="End"/>
+                                    </FlexLayout>
 
-                    </StackLayout>
+                                </StackLayout>
 
-                </Grid>
-            </Border>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView >
+
+                <CollectionView x:Name="equipmentview" IsVisible="False" ItemsLayout="VerticalList" >
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Border Margin="10,10,10,0" BackgroundColor="{StaticResource Color200}">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="16,16,16,16"/>
+                                </Border.StrokeShape>
+                                <Grid ColumnDefinitions="100, *" RowDefinitions="*" Padding="10" ColumnSpacing="10">
+
+                                    <Border Grid.Column="0" HeightRequest="100" WidthRequest="100" BackgroundColor="{StaticResource Color400}">
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="20,20,20,20"/>
+                                        </Border.StrokeShape>
+                                        <Image  Margin="10,5,5,5" HeightRequest="100" WidthRequest="100" Source="saddle.png"/>
+                                    </Border>
+
+                                    <StackLayout Grid.Column="1">
+
+                                        <Label Text="{Binding Name}" FontSize="18" Margin="0,0,0,10" FontAttributes="Bold"  TextColor="{StaticResource Color950}"/>
+                                        <Label Text="{Binding Multiplier, StringFormat='{0}X'}" FontSize="14" Margin="10,0,0,10"  TextColor="{StaticResource Color950}"/>
+
+
+
+                                        <FlexLayout
+                                            Margin="0,10,0,10"
+                                            Direction="Row"
+                                            AlignContent="Center"
+                                            AlignItems="Center"
+                                            JustifyContent="End">
+
+                                            <Button Text="{Binding Price, StringFormat='Comprar por {0}€'}" Clicked="BuyEquipment" ClassId="{Binding Id}" BackgroundColor="{StaticResource Green}" HorizontalOptions="End"/>
+                                        </FlexLayout>
+
+                                    </StackLayout>
+
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
         </ScrollView>
-    </VerticalStackLayout>
+    </StackLayout>
 </ContentPage>

@@ -30,7 +30,7 @@ public partial class Horses : ContentPage
             }
         }
 
-        equipmentview.ItemsSource = expandedEquipmentList;
+        equipmentview.ItemsSource = expandedEquipmentList.AsEnumerable().Reverse().ToList();
         int numHorses= Info.Horses.Count(x=>x.IsSold==true);
         horsesamount.Text=$"{numHorses.ToString()}/{Info.HorsesSpaces}";
 
@@ -85,6 +85,19 @@ public partial class Horses : ContentPage
                     await Task.Delay(70);
                     Horsetoolpopup.IsVisible = true;
                 }
+            }
+            else if (border.ClassId.Contains('x'))
+            {
+                Horse horse = Info.Horses.Single(x => x.Id == int.Parse(ids[0]));
+                if(horse.Equipments.Count> int.Parse(ids[1]) - 1)
+                {
+                horse.Equipments[int.Parse(ids[1]) - 1].InUse -= 1;
+                horse.Equipments.RemoveAt(int.Parse(ids[1])-1);
+                equipmenttochange = "";
+                Horsetoolpopup.IsVisible = false;
+                OnAppearing();
+                }
+                
             }
             else
             {

@@ -24,7 +24,8 @@ namespace HorsesEmpire
         {
             if (File.Exists(Fich) == true)             
             {
-                loadFromFile();
+                //loadFromFile();
+                DeleteGameData();
             }
             else
             {
@@ -308,26 +309,26 @@ namespace HorsesEmpire
             horseList.Add(new Horse(11, "Falcão", 35, 60000, 50000, false, new List<Equipment>()));
             horseList.Add(new Horse(12, "Jenifer", 40, 70000, 60000, false, new List<Equipment>()));
             horseList.Add(new Horse(13, "Luna", 50, 80000, 70000, false, new List<Equipment>()));
-            horseList.Add(new Horse(14, "Trajado", 60, 90000, 80000, false, new List<Equipment>()));
-            horseList.Add(new Horse(15, "Indio", 70, 100000, 90000, false, new List<Equipment>()));
-            horseList.Add(new Horse(16, "Julieta", 80, 110000, 100000, false, new List<Equipment>()));
-            horseList.Add(new Horse(17, "Hera", 90, 120000, 110000, false, new List<Equipment>()));
-            horseList.Add(new Horse(18, "Malibu", 100, 130000, 120000, false, new List<Equipment>()));
-            horseList.Add(new Horse(19, "Caramelo", 110, 140000, 130000, false, new List<Equipment>()));
-            horseList.Add(new Horse(20, "Massive", 120, 150000, 140000, false, new List<Equipment>()));
-            horseList.Add(new Horse(21, "Triunfo", 300, 1500000, 1400000, false, new List<Equipment>()));
+            horseList.Add(new Horse(14, "Trajado", 60, 90000, 80000, true, new List<Equipment>()));
+            horseList.Add(new Horse(15, "Indio", 70, 100000, 90000, true, new List<Equipment>()));
+            horseList.Add(new Horse(16, "Julieta", 80, 110000, 100000, true, new List<Equipment>()));
+            horseList.Add(new Horse(17, "Hera", 90, 120000, 110000, true, new List<Equipment>()));
+            horseList.Add(new Horse(18, "Malibu", 100, 130000, 120000, true, new List<Equipment>()));
+            horseList.Add(new Horse(19, "Caramelo", 110, 140000, 130000, true, new List<Equipment>()));
+            horseList.Add(new Horse(20, "Massive", 120, 150000, 140000, true, new List<Equipment>()));
+            horseList.Add(new Horse(21, "Triunfo", 300, 1500000, 1400000, true, new List<Equipment>()));
         }
         private void loadEquipmentList(List<Equipment> equipmentList)
         {
             // equipmentList.Add(new Equipment(Id, Nome, Multiplier, Price, SoldAmount, InUse));
-            equipmentList.Add(new Equipment(0, "Sela partida", 1.5, 500, 0, 0));
-            equipmentList.Add(new Equipment(1, "Sela Dura Suja", 2.0, 1000, 0, 0));
-            equipmentList.Add(new Equipment(2, "Sela Dura", 2.5, 2000, 0, 0));
-            equipmentList.Add(new Equipment(3, "Sela Nomal Suja", 3.0, 4000, 0, 0));
-            equipmentList.Add(new Equipment(4, "Sela Normal", 3.5, 6000, 0, 0));
-            equipmentList.Add(new Equipment(5, "Sela de Couro", 4.0, 10000, 0, 0));
-            equipmentList.Add(new Equipment(6, "Sela Macia", 4.5, 17000, 0, 0));
-            equipmentList.Add(new Equipment(7, "Sela Profissional", 10.0, 100000, 0, 0));
+            equipmentList.Add(new Equipment(0, "Sela partida", 1.5, 500, 2, 0));
+            equipmentList.Add(new Equipment(1, "Sela Dura Suja", 2.0, 1000, 1, 0));
+            equipmentList.Add(new Equipment(2, "Sela Dura", 2.5, 2000, 3, 0));
+            equipmentList.Add(new Equipment(3, "Sela Nomal Suja", 3.0, 4000, 4, 0));
+            equipmentList.Add(new Equipment(4, "Sela Normal", 3.5, 6000, 5, 0));
+            equipmentList.Add(new Equipment(5, "Sela de Couro", 4.0, 10000, 3, 0));
+            equipmentList.Add(new Equipment(6, "Sela Macia", 4.5, 17000, 3, 0));
+            equipmentList.Add(new Equipment(7, "Sela Profissional", 10.0, 100000, 1, 0));
         }
 
         public void updateMoney(bool updated = true)
