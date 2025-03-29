@@ -70,4 +70,18 @@ public partial class StorePage : ContentPage
             }
         }
     }
+
+    public void BuySpaces(object sender, EventArgs e)
+    {
+        if (sender is Button button)
+        {
+            price = Info.HorsesSpacesPrice;
+            Info.Money -= price;
+            Info.HorsesSpaces += 5;
+            price = Info.HorsesSpacesPrice * 2;
+
+            BuySpaces.Text = $"Comprar +5 - {price}€";
+            horsesamount.Text = $"{Info.Horses.Count(x => x.IsSold == true).ToString()}/{Info.HorsesSpaces}";
+        }
+    }
 }
