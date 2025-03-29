@@ -9,8 +9,8 @@ namespace HorsesEmpire
 	public class Equipment{
 		public int Id { get; set; }
 		public required string Name { get; set; }
-		public decimal Multiplier { get; set; }
-		public decimal Price { get; set; }
+		public double Multiplier { get; set; }
+		public int Price { get; set; }
 		public int SoldAmount { get; set; }
 		public int InUse { get; set; }
 	}
@@ -36,8 +36,9 @@ namespace HorsesEmpire
 		private static int horsesSpaces;
 		private static long lastSave;
 		private static List<Horse> horses = new List<Horse>();
+        private static List<Equipment> equipments = new List<Equipment>();
 
-		public static int Money
+        public static int Money
 		{
 			get => money;
 			set => money = value >= 0 ? value : 0; // Example validation
@@ -89,8 +90,11 @@ namespace HorsesEmpire
 		{
 			get => horses;
 		}
-
-		public static long GetCurrentDateTime()
+        public static List<Equipment> Equipment
+        {
+            get => equipments;
+        }
+        public static long GetCurrentDateTime()
 		{
 			return DateTimeOffset.Now.ToUnixTimeSeconds();
 		}
