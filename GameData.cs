@@ -24,8 +24,7 @@ namespace HorsesEmpire
         {
             if (File.Exists(Fich) == true)             
             {
-                //loadFromFile();
-                DeleteGameData();
+                loadFromFile();
             }
             else
             {
@@ -91,8 +90,12 @@ namespace HorsesEmpire
             userdata.Attributes.Append(clickNumber);
 
             XmlAttribute horsesSpaces = doc.CreateAttribute("horsesSpaces");
-            horsesSpaces.Value = "10";
+            horsesSpaces.Value = "5";
             userdata.Attributes.Append(horsesSpaces);
+
+            XmlAttribute horsesSpacesPrice = doc.CreateAttribute("horsesSpacesPrice");
+            horsesSpacesPrice.Value = "20000";
+            userdata.Attributes.Append(horsesSpacesPrice);
 
             XmlAttribute lastSave = doc.CreateAttribute("lastSave");
             lastSave.Value = Info.GetCurrentDateTime().ToString();
@@ -165,6 +168,7 @@ namespace HorsesEmpire
                 Info.ClickNumber = int.Parse(userdata.Attributes["clickNumber"].Value);
                 Info.HorsesSpaces = int.Parse(userdata.Attributes["horsesSpaces"].Value);
                 Info.LastSave = long.Parse(userdata.Attributes["lastSave"].Value);
+                Info.HorsesSpacesPrice = int.Parse(userdata.Attributes["horsesSpacesPrice"].Value);
             }
 
             // Load equipments
@@ -230,6 +234,7 @@ namespace HorsesEmpire
                 userdata.Attributes["clickNumber"].Value = Info.ClickNumber.ToString();
                 userdata.Attributes["horsesSpaces"].Value = Info.HorsesSpaces.ToString();
                 userdata.Attributes["lastSave"].Value = Info.LastSave.ToString();
+                userdata.Attributes["horsesSpacesPrice"].Value = Info.HorsesSpacesPrice.ToString();
             }
 
             // Save horses
@@ -377,6 +382,4 @@ namespace HorsesEmpire
             Info.LastSave = currentTime;
 		}
     }
-
-
 }

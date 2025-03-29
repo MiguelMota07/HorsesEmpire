@@ -55,10 +55,16 @@ namespace HorsesEmpire
 		private static int allMoney;
 		private static int clickNumber;
 		private static int horsesSpaces;
+		private static int horsesSpacesPrice;
 		private static long lastSave;
 		private static List<Horse> horses = new List<Horse>();
         private static List<Equipment> equipments = new List<Equipment>();
-
+		
+		public static int HorsesSpacesPrice
+		{
+			get => horsesSpacesPrice;
+			set => horsesSpacesPrice = value >=0 ? value : 0; 
+		}
         public static int Money
 		{
 			get => money;
