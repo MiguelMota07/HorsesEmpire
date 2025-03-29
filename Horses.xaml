@@ -42,7 +42,7 @@
                                             </Border.StrokeShape>
                                             <StackLayout>
                                                 <Image HeightRequest="25" WidthRequest="25" Source="saddle.png"/>
-                                                <Label Text="{Binding Path=EquipmentIds[0], StringFormat='{0}X'}" HorizontalOptions="Center" FontSize="10" />
+                                                <Label Text="{Binding Path=EquipmentIds[0], StringFormat='{0}X'}" HorizontalOptions="Center" ClassId="{Binding Id, StringFormat='{0},1'}" FontSize="10" />
                                             </StackLayout>
                                         </Border>
                                         <Border Margin="0, 0, 5, 0"  HeightRequest="45" WidthRequest="40" BackgroundColor="{StaticResource Color400}">
@@ -51,13 +51,16 @@
                                             </Border.StrokeShape>
                                             <StackLayout>
                                                 <Image HeightRequest="25" WidthRequest="25" Source="saddle.png"/>
-                                                <Label Text="{Binding Path=EquipmentIds[1], StringFormat='{0}X'}" HorizontalOptions="Center" FontSize="10" />
+                                                <Label Text="{Binding Path=EquipmentIds[1], StringFormat='{0}X'}" HorizontalOptions="Center" FontSize="10" ClassId="{Binding Id, StringFormat='{0},2'}" />
                                             </StackLayout>
                                         </Border>
-                                        <Border Margin="0, 0, 5, 0"  HeightRequest="45" WidthRequest="40" BackgroundColor="{StaticResource Color400}">
+                                        <Border Margin="0, 0, 5, 0" ClassId="{Binding Id, StringFormat='{0},3'}" HeightRequest="45" WidthRequest="40" BackgroundColor="{StaticResource Color400}">
                                             <Border.StrokeShape>
                                                 <RoundRectangle CornerRadius="3"/>
                                             </Border.StrokeShape>
+                                            <Border.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped=""  />
+                                            </Border.GestureRecognizers>
                                             <StackLayout>
                                                 <Image HeightRequest="25" WidthRequest="25" Source="saddle.png"/>
                                                 <Label Text="{Binding Path=EquipmentIds[2], StringFormat='{0}X'}" HorizontalOptions="Center" FontSize="10" />

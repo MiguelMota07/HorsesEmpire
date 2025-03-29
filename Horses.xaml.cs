@@ -29,4 +29,8 @@ public partial class Horses : ContentPage
             OnAppearing();
         }
     }
+    public void ChangeEquipment(object sender, EventArgs e)
+    {
+
+    }
 }
