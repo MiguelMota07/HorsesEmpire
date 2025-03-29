@@ -36,19 +36,25 @@
                                     <Label Text="{Binding Name}" FontSize="18" Margin="0,0,0,10" FontAttributes="Bold"  TextColor="{StaticResource Color950}"/>
 
                                     <FlexLayout Margin="0,0,0,10">
-                                        <Border Margin="0, 0, 5, 0"  HeightRequest="45" WidthRequest="40" BackgroundColor="{StaticResource Color400}">
+                                        <Border Margin="0, 0, 5, 0" ClassId="{Binding Id, StringFormat='{0},1'}"  HeightRequest="45" WidthRequest="40" BackgroundColor="{StaticResource Color400}">
                                             <Border.StrokeShape>
                                                 <RoundRectangle CornerRadius="3"/>
                                             </Border.StrokeShape>
+                                            <Border.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="ChangeEquipment"  />
+                                            </Border.GestureRecognizers>
                                             <StackLayout>
                                                 <Image HeightRequest="25" WidthRequest="25" Source="saddle.png"/>
                                                 <Label Text="{Binding Path=Equipments[0].Multiplier, StringFormat='{0}X'}" HorizontalOptions="Center" FontSize="10" />
                                             </StackLayout>
                                         </Border>
-                                        <Border Margin="0, 0, 5, 0"  HeightRequest="45" WidthRequest="40" BackgroundColor="{StaticResource Color400}">
+                                        <Border Margin="0, 0, 5, 0" ClassId="{Binding Id, StringFormat='{0},2'}"  HeightRequest="45" WidthRequest="40" BackgroundColor="{StaticResource Color400}">
                                             <Border.StrokeShape>
                                                 <RoundRectangle CornerRadius="3"/>
                                             </Border.StrokeShape>
+                                            <Border.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="ChangeEquipment"  />
+                                            </Border.GestureRecognizers>
                                             <StackLayout>
                                                 <Image HeightRequest="25" WidthRequest="25" Source="saddle.png"/>
                                                 <Label Text="{Binding Path=Equipments[1].Multiplier, StringFormat='{0}X'}" HorizontalOptions="Center" FontSize="10" />
@@ -59,7 +65,7 @@
                                                 <RoundRectangle CornerRadius="3"/>
                                             </Border.StrokeShape>
                                             <Border.GestureRecognizers>
-                                                <TapGestureRecognizer Tapped=""  />
+                                                <TapGestureRecognizer Tapped="ChangeEquipment"  />
                                             </Border.GestureRecognizers>
                                             <StackLayout>
                                                 <Image HeightRequest="25" WidthRequest="25" Source="saddle.png"/>
@@ -87,7 +93,7 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
         </ScrollView>
-        <Border x:Name="Horsetoolpopup" BackgroundColor="{StaticResource Color300}" Padding="5" Margin="10,0,10,0" HeightRequest="150" HorizontalOptions="Fill" VerticalOptions="EndAndExpand" ZIndex="20">
+        <Border x:Name="Horsetoolpopup" IsVisible="Hidden"  BackgroundColor="{StaticResource Color300}" Padding="5" Margin="10,0,10,0" HeightRequest="150" HorizontalOptions="Fill" VerticalOptions="EndAndExpand" ZIndex="20">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="20,20,0,0"/>
             </Border.StrokeShape>

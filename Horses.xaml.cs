@@ -29,8 +29,28 @@ public partial class Horses : ContentPage
             OnAppearing();
         }
     }
+    private string equipmenttochange = "";
     public void ChangeEquipment(object sender, EventArgs e)
     {
+
+        string[] ids = equipmenttochange.Split(',');
+        if(sender is Border border)
+        {
+            if(equipmenttochange=="")
+            {
+                Horsetoolpopup.IsVisible = true;
+                equipmenttochange = border.ClassId;
+            }
+            else if (equipmenttochange == border.ClassId)
+            {
+                equipmenttochange = "";
+                Horsetoolpopup.IsVisible = false;
+            }
+            else if(equipmenttochange != border.ClassId)
+            {
+                equipmenttochange = border.ClassId;
+            }
+        }
 
     }
 }
