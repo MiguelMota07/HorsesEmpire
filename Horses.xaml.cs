@@ -28,7 +28,7 @@ public partial class Horses : ContentPage
             }
         }
 
-        equipmentview.ItemsSource = expandedEquipmentList;
+        equipmentview.ItemsSource = expandedEquipmentList.AsEnumerable().Reverse().ToList();
         int numHorses= Info.Horses.Count(x=>x.IsSold==true);
         horsesamount.Text=$"{numHorses.ToString()}/{Info.HorsesSpaces}";
 

@@ -13,7 +13,7 @@
         </Border>
 
 
-        <ScrollView VerticalOptions="Fill">
+        <ScrollView VerticalOptions="FillAndExpand" >
             <CollectionView x:Name="horsesview" ItemsLayout="VerticalList">
 
                 <CollectionView.ItemTemplate>
@@ -93,32 +93,44 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
         </ScrollView>
-        <Border x:Name="Horsetoolpopup" IsVisible="Hidden"  BackgroundColor="{StaticResource Color200}" Padding="10" Margin="10,0,10,0" HeightRequest="70" HorizontalOptions="Fill" VerticalOptions="EndAndExpand" ZIndex="20">
+        <Border x:Name="Horsetoolpopup" IsVisible="Hidden"  BackgroundColor="{StaticResource Color200}" Padding="10" Margin="0,0,0,0" HeightRequest="70" HorizontalOptions="Fill" VerticalOptions="End" ZIndex="20">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="20,20,0,0"/>
             </Border.StrokeShape>
             <ScrollView Orientation="Horizontal">
-                <CollectionView x:Name="equipmentview" ItemsLayout="HorizontalGrid">
+                <HorizontalStackLayout>
+                    <Border Margin="1"  HeightRequest="45" ClassId="x" WidthRequest="40" BackgroundColor="{StaticResource Color400}">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="3"/>
+                        </Border.StrokeShape>
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="ChangeEquipment"/>
+                        </Border.GestureRecognizers>
+                        <StackLayout>
+                            <Image HeightRequest="25" WidthRequest="25" Source="saddle.png"/>
+                            <Label Text="{Binding Multiplier, StringFormat='{0}X'}" HorizontalOptions="Center" VerticalOptions="End"  FontSize="10" />
+                        </StackLayout>
+                    </Border>
+                    <CollectionView x:Name="equipmentview" ItemsLayout="HorizontalGrid">
                         <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <FlexLayout Wrap="Wrap" Margin="5" Direction="Row" JustifyContent="Start">
                                 <Border Margin="1"  HeightRequest="45" ClassId="{Binding Id}" WidthRequest="40" BackgroundColor="{StaticResource Color400}">
                                     <Border.StrokeShape>
                                         <RoundRectangle CornerRadius="3"/>
                                     </Border.StrokeShape>
                                     <Border.GestureRecognizers>
-                                        <TapGestureRecognizer Tapped="ChangeEquipment"  />
+                                        <TapGestureRecognizer Tapped="ChangeEquipment"/>
                                     </Border.GestureRecognizers>
                                     <StackLayout>
                                         <Image HeightRequest="25" WidthRequest="25" Source="saddle.png"/>
                                         <Label Text="{Binding Multiplier, StringFormat='{0}X'}" HorizontalOptions="Center" VerticalOptions="End"  FontSize="10" />
                                     </StackLayout>
                                 </Border>
-                            </FlexLayout>
-                        </DataTemplate>
+                            </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
-                                
+                </HorizontalStackLayout>
+
 
             </ScrollView>
         </Border>
