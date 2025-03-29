@@ -15,6 +15,8 @@ public partial class StorePage : ContentPage
         equipmentview.ItemsSource = Info.Equipments;
         int numHorses = Info.Horses.Count(x => x.IsSold == true);
         horsesamount.Text = $"{numHorses.ToString()}/{Info.HorsesSpaces}";
+        GameData gameData = new GameData();
+        gameData.updateMoney();
 
     }
     public void switchstoretoequipment(object sender, EventArgs e)
@@ -46,6 +48,8 @@ public partial class StorePage : ContentPage
     {
         if(sender is Button button)
         {
+            GameData gameData = new GameData();
+            gameData.updateMoney();
             int idcavalo= int.Parse(button.ClassId);
             Horse horse = Info.Horses.Single(x=>x.Id == idcavalo);
             if(Info.Money>=horse.BuyPrice && Info.HorsesSpaces> Info.Horses.Count(x => x.IsSold == true))

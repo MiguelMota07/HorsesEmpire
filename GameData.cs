@@ -24,8 +24,7 @@ namespace HorsesEmpire
         {
             if (File.Exists(Fich) == true)             
             {
-                //loadFromFile();
-                DeleteGameData();
+                loadFromFile();
             }
             else
             {
