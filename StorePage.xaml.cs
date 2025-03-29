@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Drawing;
 
 namespace HorsesEmpire;
@@ -17,6 +18,7 @@ public partial class StorePage : ContentPage
         horsesamount.Text = $"{numHorses.ToString()}/{Info.HorsesSpaces}";
         GameData gameData = new GameData();
         gameData.updateMoney();
+        BuySpacesButton.Text = $"Comprar +5 - {Info.HorsesSpacesPrice.ToString()}€";
 
     }
     public void switchstoretoequipment(object sender, EventArgs e)
@@ -86,7 +88,7 @@ public partial class StorePage : ContentPage
             Info.HorsesSpaces += 5;
             Info.HorsesSpacesPrice = price * 2;
 
-            BuySpacesButton.Text = $"Comprar +5 - {price}€";
+            BuySpacesButton.Text = $"Comprar +5 - {Info.HorsesSpacesPrice}€";
             horsesamount.Text = $"{Info.Horses.Count(x => x.IsSold == true).ToString()}/{Info.HorsesSpaces}";
         }
     }

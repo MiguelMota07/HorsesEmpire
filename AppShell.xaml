@@ -7,19 +7,19 @@
     Title="HorsesEmpire">
 
     <TabBar>
-        <Tab x:Name="ComingSoonTab" Icon="coming.png" Title="Coming soon">
+        <Tab x:Name="ComingSoonTab" Icon="coming.png" Title="Em breve">
             <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
         </Tab>
-        <Tab Icon="horse.png" Title="Horses">
+        <Tab Icon="horse.png" Title="Cavalos">
             <ShellContent ContentTemplate="{DataTemplate local:Horses}" />
         </Tab>
         <Tab x:Name="HomeTab" Icon="home.png" Title="Home">
             <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
         </Tab>
-        <Tab Icon="shop.png" Title="Shop">
+        <Tab Icon="shop.png" Title="Loja">
             <ShellContent ContentTemplate="{DataTemplate local:StorePage}" />
         </Tab>
-        <Tab Icon="statistics.png" Title="Statistics">
+        <Tab Icon="statistics.png" Title="Estatisticas">
             <ShellContent ContentTemplate="{DataTemplate local:StatusPage}" />
         </Tab>
     </TabBar>

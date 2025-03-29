@@ -24,9 +24,9 @@ namespace HorsesEmpire
         }
         protected override void OnAppearing()
         {
-            moneyperclick.Text = Info.MoneyPerClick.ToString() + "€/click";
+            moneyperclick.Text = Info.MoneyPerClick.ToString() + "€/clique";
             moneypersecond.Text = Info.MoneyPerSecond.ToString() + "€/s";
-            upgradeclick.Text = "Upgrade Click " + Info.ClickUpgradeCost.ToString() + "€";
+            upgradeclick.Text = "Melhorar Clique " + Info.ClickUpgradeCost.ToString() + "€";
             money.Text = Info.Money.ToString() + "€";
         }
         public void OnClickMoneyButton(object sender, EventArgs e)
@@ -51,9 +51,9 @@ namespace HorsesEmpire
                     Info.MoneyPerClick = (int)(Info.MoneyPerClick * 1.5);
                 Info.ClickUpgradeCost = (int)(upcost * 2);
 
-                moneyperclick.Text = Info.MoneyPerClick.ToString() + "€/click";
+                moneyperclick.Text = Info.MoneyPerClick.ToString() + "€/clique";
                 money.Text = Info.Money.ToString() + "€";
-                upgradeclick.Text = "Upgrade Click " + Info.ClickUpgradeCost.ToString() + "€";
+                upgradeclick.Text = "Melhorar Clique " + Info.ClickUpgradeCost.ToString() + "€";
             }
 
             

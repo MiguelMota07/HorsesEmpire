@@ -10,7 +10,7 @@
             </Border.StrokeShape>
             <FlexLayout Direction="Row" AlignItems="Center">
                 <Button x:Name="BuySpacesButton" Clicked="BuySpaces" Text="Comprar +5 - 1000€" FontSize="10" Margin="5,0,10,0" FlexLayout.Basis="82%" Padding="0" HeightRequest="30"/>
-                <Label x:Name="horsesamount" Text="1/10" FontAttributes="Bold" FontSize="Medium" FlexLayout.Basis="20%"/>
+                <Label x:Name="horsesamount" Text="1/5" FontAttributes="Bold" FontSize="Medium" FlexLayout.Basis="20%"/>
             </FlexLayout>
         </Border>
         <Grid WidthRequest="300" Margin="0,10,0,20" ColumnSpacing="-1">
