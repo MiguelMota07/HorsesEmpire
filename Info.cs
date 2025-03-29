@@ -8,21 +8,42 @@ namespace HorsesEmpire
 {
 	public class Equipment{
 		public int Id { get; set; }
-		public required string Name { get; set; }
+		public string Name { get; set; }
 		public double Multiplier { get; set; }
 		public int Price { get; set; }
 		public int SoldAmount { get; set; }
 		public int InUse { get; set; }
+
+		public Equipment(int id, string name, double multiplier, int price, int soldAmount, int inUse)
+		{
+			Id = id;
+			Name = name;
+			Multiplier = multiplier;
+			Price = price;
+			SoldAmount = soldAmount;
+			InUse = inUse;
+		}
 	}
 	public class Horse
 	{
 		public int Id { get; set; }
-		public required string Name { get; set; }
+		public string Name { get; set; }
 		public int BaseProduction { get; set; }
 		public int BuyPrice { get; set; }
 		public int SellPrice { get; set; }
 		public bool IsSold { get; set; }
 		public List<Equipment> Equipments { get; set; } = new List<Equipment>();
+
+		public Horse(int id, string name, int baseProduction, int buyPrice, int sellPrice, bool isSold, List<Equipment> equipments = null)
+		{
+			Id = id;
+			Name = name;
+			BaseProduction = baseProduction;
+			BuyPrice = buyPrice;
+			SellPrice = sellPrice;
+			IsSold = isSold;
+			Equipments = equipments;
+		}
 	}
 
 	internal class Info
@@ -90,7 +111,7 @@ namespace HorsesEmpire
 		{
 			get => horses;
 		}
-        public static List<Equipment> Equipment
+        public static List<Equipment> Equipments
         {
             get => equipments;
         }

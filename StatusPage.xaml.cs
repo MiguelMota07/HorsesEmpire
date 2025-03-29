@@ -13,11 +13,13 @@ public partial class StatusPage : ContentPage
     {
         base.OnAppearing();
         numerofclicks.Text = Info.ClickNumber.ToString();
-        allthemoney.Text = Info.AllMoney.ToString() + "€";
-        assets.Text = 0 + "€";
+        allthemoney.Text = Info.AllMoney.ToString() + "â‚¬";
+        assets.Text = 0 + "â‚¬";
     }
     public void DeleteUserData(object sender, EventArgs e)
     {
+        GameData gameData = new GameData();
+        gameData.DeleteGameData();
         OnAppearing();
     }
 }

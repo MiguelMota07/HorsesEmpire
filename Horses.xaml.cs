@@ -12,13 +12,13 @@ public partial class Horses : ContentPage
     {
         base.OnAppearing();
         horsesview.ItemsSource = Info.Horses.Where(x => x.IsSold == true).ToList();
-        if (Info.Equipment == null)
+        if (Info.Equipments == null)
         {
             return;
         }
         var expandedEquipmentList = new List<Equipment>();
 
-        foreach (var equipment in Info.Equipment.Where(x => x.SoldAmount > x.InUse))
+        foreach (var equipment in Info.Equipments.Where(x => x.SoldAmount > x.InUse))
         {
             int availableCount = equipment.SoldAmount - equipment.InUse;
 

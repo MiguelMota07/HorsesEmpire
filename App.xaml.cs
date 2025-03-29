@@ -1,4 +1,16 @@
-﻿using System.Xml;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+// using System.Windows.Forms;
+using System.IO;
+using System.Xml;
+using System.Xml.Linq;
+using System.Text.RegularExpressions;
 
 namespace HorsesEmpire
 {
@@ -14,82 +26,36 @@ namespace HorsesEmpire
             //Info = new Info();
             UserAppTheme = AppTheme.Light;
 
-            InitUserData();
+            GameData gameData = new GameData();
+            gameData.InitUserData();
         }
 
-        private void InitUserData()
+        protected override void OnSleep()
         {
-			// string Fich = "info.xml";
+            base.OnSleep();
+            // Add your cleanup code here
+            Console.WriteLine("Application is going to sleep");
+            // Save any unsaved data
+            GameData gameData = new GameData();
+            gameData.SaveGameData();
+        }
 
-			// if (File.Exists(Fich) == false)             
-			// {                 
-			// 	XmlTextWriter FicheiroXml = new XmlTextWriter(Fich, System.Text.Encoding.UTF8);                  
-			// 	//Criar um novo ficheiro                 
-			// 	FicheiroXml.WriteStartDocument(true);                  
-			// 	// Definir o estilo de indentação do ficheiro                  
-			// 	FicheiroXml.Formatting = Formatting.Indented;                 
-			// 	FicheiroXml.Indentation = 2;                  
-			// 	// Criar a raiz                  
-			// 	FicheiroXml.WriteStartElement("associacao");                  
-			// 	// Escrever a estrutura no ficheiro                  
-			// 	FicheiroXml.WriteEndDocument();                 
-			// 	FicheiroXml.Close();             
-			// }          
-		
+        protected override Window CreateWindow(IActivationState activationState)
+        {
+            Window window = base.CreateWindow(activationState);
+            
+            window.Destroying += Window_Destroying;
+            
+            return window;
+        }
 
-
-
-
-            Info.Money = 0;
-            Info.MoneyPerClick = 1;
-            Info.MoneyPerSecond = 0;
-            Info.AllMoney = 0;
-            Info.ClickUpgradeCost = 40;
-			Info.ClickNumber = 0;
-            Equipment equipment1 = new Equipment
-            {
-                Id = 1,
-                Name = "Normal Saddle",
-                Multiplier = 1.50,
-                Price = 200,
-                SoldAmount = 2,
-                InUse = 1
-            };
-            Info.Equipment.Add(equipment1);
-            Equipment equipment2 = new Equipment
-            {
-                Id = 2,
-                Name = "Op Saddle",
-                Multiplier = 5,
-                Price = 2000,
-                SoldAmount = 2,
-                InUse = 2
-            };
-            Info.Equipment.Add(equipment2);
-            Horse horse = new Horse
-			{
-				Id = 1,
-				Name = "Horse 1",
-				BaseProduction = 10,
-				BuyPrice = 10000,
-				SellPrice = 9000,
-				IsSold = true,
-				Equipments = new List<Equipment>() {equipment1, equipment2}
-			};
-
-			Info.Horses.Add(horse);
-            horse = new Horse
-            {
-                Id = 2,
-                Name = "Horse 2",
-                BaseProduction = 10,
-                BuyPrice = 10000,
-                SellPrice = 9000,
-                IsSold = true,
-                Equipments = new List<Equipment>() {equipment2}
-            };
-
-            Info.Horses.Add(horse);
+        private void Window_Destroying(object sender, EventArgs e)
+        {
+            // This is called when the window is being destroyed
+            Console.WriteLine("Window is being destroyed");
+            // Perform cleanup operations
+            GameData gameData = new GameData();
+            gameData.SaveGameData();
         }
     }
 }
