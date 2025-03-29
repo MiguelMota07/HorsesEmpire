@@ -14,7 +14,17 @@ public partial class StatusPage : ContentPage
         base.OnAppearing();
         numerofclicks.Text = Info.ClickNumber.ToString();
         allthemoney.Text = Info.AllMoney.ToString() + "€";
-        assets.Text = 0 + "€";
+
+        int money=0;
+        foreach (var horse in Info.Horses)
+        {
+            if (horse.IsSold == true)
+            {
+                money += horse.BuyPrice;
+            }
+        }
+
+        assets.Text = $"{money.ToString()}€";
     }
     public void DeleteUserData(object sender, EventArgs e)
     {

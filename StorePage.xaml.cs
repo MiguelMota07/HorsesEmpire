@@ -15,6 +15,7 @@ public partial class StorePage : ContentPage
         equipmentview.ItemsSource = Info.Equipments;
         int numHorses = Info.Horses.Count(x => x.IsSold == true);
         horsesamount.Text = $"{numHorses.ToString()}/{Info.HorsesSpaces}";
+        BuySpacesButton.Text = $"Comprar +5 - {Info.HorsesSpacesPrice}€";
         GameData gameData = new GameData();
         gameData.updateMoney();
 
