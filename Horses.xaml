@@ -9,7 +9,7 @@
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="5,5,5,5"/>
             </Border.StrokeShape>
-            <Label Text="1/10" FontAttributes="Bold" FontSize="Medium"/>
+            <Label x:Name="horsesamount" Text="1/10" FontAttributes="Bold" FontSize="Medium"/>
         </Border>
 
 
@@ -93,7 +93,7 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
         </ScrollView>
-        <Border x:Name="Horsetoolpopup" IsVisible="Hidden"  BackgroundColor="{StaticResource Color300}" Padding="10" Margin="10,0,10,0" HeightRequest="70" HorizontalOptions="Fill" VerticalOptions="EndAndExpand" ZIndex="20">
+        <Border x:Name="Horsetoolpopup" IsVisible="Hidden"  BackgroundColor="{StaticResource Color200}" Padding="10" Margin="10,0,10,0" HeightRequest="70" HorizontalOptions="Fill" VerticalOptions="EndAndExpand" ZIndex="20">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="20,20,0,0"/>
             </Border.StrokeShape>

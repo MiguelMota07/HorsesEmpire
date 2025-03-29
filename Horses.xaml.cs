@@ -29,6 +29,8 @@ public partial class Horses : ContentPage
         }
 
         equipmentview.ItemsSource = expandedEquipmentList;
+        int numHorses= Info.Horses.Count(x=>x.IsSold==true);
+        horsesamount.Text=$"{numHorses.ToString()}/{Info.HorsesSpaces}";
 
     }
     /*
@@ -38,12 +40,19 @@ public partial class Horses : ContentPage
     }*/
     public void Sellhorse(object sender, EventArgs e)
     {
-        if(sender is Button button)
+        if(sender is Button button )  
         {
+            //!update: calculate money per second
             int id =int.Parse(button.ClassId);
             Horse horse = Info.Horses.Single(x => x.Id == id);
             horse.IsSold = false;
+            Horsetoolpopup.IsVisible = false;
             Info.Money += horse.SellPrice;
+            foreach(Equipment equipment in horse.Equipments)
+            {
+                equipment.InUse -=1;
+            }
+            horse.Equipments.Clear();
             OnAppearing();
         }
     }
@@ -76,7 +85,29 @@ public partial class Horses : ContentPage
             }
             else
             {
+                //!update: calculate money per second
+                int idnovoequipamento = int.Parse(border.ClassId);
+                Equipment equipment = Info.Equipments.Single(x => x.Id == idnovoequipamento);
+                Horse horse = Info.Horses.Single(x => x.Id == int.Parse(ids[0]));
+                if (horse != null)
+                {
+                    equipment.InUse += 1;
 
+                    if (horse.Equipments.Count > int.Parse(ids[1]) - 1)
+                    {
+                        horse.Equipments[int.Parse(ids[1]) - 1].InUse -= 1;
+                        horse.Equipments[int.Parse(ids[1]) - 1] = equipment;
+                    }
+                    else
+                    {
+                        horse.Equipments.Add(equipment);
+                    }
+                }
+                Horsetoolpopup.IsVisible = false;
+                equipmenttochange = "";
+
+
+                OnAppearing();
             }
         }
 
