@@ -106,10 +106,7 @@
                         <Border.GestureRecognizers>
                             <TapGestureRecognizer Tapped="ChangeEquipment"/>
                         </Border.GestureRecognizers>
-                        <StackLayout>
-                            <Image HeightRequest="25" WidthRequest="25" Source="saddle.png"/>
-                            <Label Text="{Binding Multiplier, StringFormat='{0}X'}" HorizontalOptions="Center" VerticalOptions="End"  FontSize="10" />
-                        </StackLayout>
+                        <Label Text="X" HorizontalOptions="Center" VerticalOptions="Center"  FontSize="30" />
                     </Border>
                     <CollectionView x:Name="equipmentview" ItemsLayout="HorizontalGrid">
                         <CollectionView.ItemTemplate>

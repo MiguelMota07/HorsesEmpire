@@ -83,6 +83,19 @@ public partial class Horses : ContentPage
                     Horsetoolpopup.IsVisible = true;
                 }
             }
+            else if (border.ClassId.Contains('x'))
+            {
+                Horse horse = Info.Horses.Single(x => x.Id == int.Parse(ids[0]));
+                if(horse.Equipments.Count> int.Parse(ids[1]) - 1)
+                {
+                horse.Equipments[int.Parse(ids[1]) - 1].InUse -= 1;
+                horse.Equipments.RemoveAt(int.Parse(ids[1])-1);
+                equipmenttochange = "";
+                Horsetoolpopup.IsVisible = false;
+                OnAppearing();
+                }
+                
+            }
             else
             {
                 //!update: calculate money per second
