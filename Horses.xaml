@@ -93,16 +93,16 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
         </ScrollView>
-        <Border x:Name="Horsetoolpopup" IsVisible="Hidden"  BackgroundColor="{StaticResource Color300}" Padding="5" Margin="10,0,10,0" HeightRequest="150" HorizontalOptions="Fill" VerticalOptions="EndAndExpand" ZIndex="20">
+        <Border x:Name="Horsetoolpopup" IsVisible="Hidden"  BackgroundColor="{StaticResource Color300}" Padding="10" Margin="10,0,10,0" HeightRequest="70" HorizontalOptions="Fill" VerticalOptions="EndAndExpand" ZIndex="20">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="20,20,0,0"/>
             </Border.StrokeShape>
-            <ScrollView>
-                <FlexLayout Wrap="Wrap" Margin="5" Direction="Row" JustifyContent="Start">
-                    <CollectionView x:Name="equipmentview" ItemsLayout="VerticalList">
+            <ScrollView Orientation="Horizontal">
+                <CollectionView x:Name="equipmentview" ItemsLayout="HorizontalGrid">
                         <CollectionView.ItemTemplate>
-                            <DataTemplate>
-                                <Border Margin="1"  HeightRequest="45" WidthRequest="40" BackgroundColor="{StaticResource Color400}">
+                        <DataTemplate>
+                            <FlexLayout Wrap="Wrap" Margin="5" Direction="Row" JustifyContent="Start">
+                                <Border Margin="1"  HeightRequest="45" ClassId="{Binding Id}" WidthRequest="40" BackgroundColor="{StaticResource Color400}">
                                     <Border.StrokeShape>
                                         <RoundRectangle CornerRadius="3"/>
                                     </Border.StrokeShape>
@@ -110,15 +110,15 @@
                                         <TapGestureRecognizer Tapped="ChangeEquipment"  />
                                     </Border.GestureRecognizers>
                                     <StackLayout>
-                                        <Image HeightRequest="25" WidthRequest="25" Source="horse.png"/>
-                                        <Label Text="X2" HorizontalOptions="Center" VerticalOptions="End"  FontSize="10" />
+                                        <Image HeightRequest="25" WidthRequest="25" Source="saddle.png"/>
+                                        <Label Text="{Binding Multiplier, StringFormat='{0}X'}" HorizontalOptions="Center" VerticalOptions="End"  FontSize="10" />
                                     </StackLayout>
                                 </Border>
-                            </DataTemplate>
+                            </FlexLayout>
+                        </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
                                 
-                </FlexLayout>
 
             </ScrollView>
         </Border>
