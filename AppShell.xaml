@@ -8,7 +8,7 @@
 
     <TabBar>
         <Tab x:Name="ComingSoonTab" Icon="coming.png" Title="Em breve">
-            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
+            <ShellContent ContentTemplate="{DataTemplate local:ComingSoon}" />
         </Tab>
         <Tab Icon="horse.png" Title="Cavalos">
             <ShellContent ContentTemplate="{DataTemplate local:Horses}" />
